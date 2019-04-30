@@ -1,0 +1,88 @@
+var lastTabId = "main"
+
+function navigate(tabId)
+{
+	if(canNavigate(tabId))
+	{
+		hideAllTabs();
+		document.getElementById("tab-" + tabId).style.display = "";
+		lastTabId = tabId;
+	}
+}
+
+function hideAllTabs()
+{
+	document.getElementById("tab-main").style.display = "none";
+	document.getElementById("tab-mining").style.display = "none";
+	document.getElementById("tab-crafting").style.display = "none";
+	document.getElementById("tab-miningOres").style.display = "none";
+	document.getElementById("tab-shop").style.display = "none";
+	document.getElementById("tab-craftingItems").style.display = "none";
+	document.getElementById("tab-craftingAnItem").style.display = "none";
+	document.getElementById("tab-woodcutting").style.display = "none";
+	document.getElementById("tab-tree").style.display = "none";
+}
+
+function canNavigate(tabId)
+{
+	if(document.getElementById("body-tag").style.backgroundImage == "url(\"images/backgrounds/woodcutting.png\")")
+		document.getElementById("body-tag").style.backgroundImage = "url('images/backgrounds/background2.jpg')";
+	
+	switch(tabId)
+	{
+		case "mining":
+			if(miners == 0)
+			{
+				confirmDialogue("90%","To unlock this skill, you must purchase a miner from the shop.<hr /><br /><div class='center'><img src='images/miners.png' class='img-large' /></center>","Close","","");
+				return false;
+			}
+			else if(miners == 1 && miningUnlocked == 0)
+			{
+				confirmDialogue("90%","To unlock this skill, you must purchase a miner from the shop.<br /><span style='color:green'>You are able to unlock this skill!</span><hr /><br /><div class='center'><img src='images/miners.png' class='img-large' /></center>","Unlock","Close","UNLOCK_SKILL=mining");
+				return false;
+			}
+			else
+				return true;
+		break;
+		
+		case "crafting":
+			if(stoneFurnace == 0)
+			{
+				confirmDialogue("90%","To unlock this skill, you must purchase a stone furnace from the shop.<hr /><br /><div class='center'><img src='images/stoneFurnace.png' class='img-large' /></center>","Close","","");
+				return false;
+			}
+			else if(stoneFurnace == 1 && craftingUnlocked == 0)
+			{
+				confirmDialogue("90%","To unlock this skill, you must purchase a stone furnace from the shop.<br /><span style='color:green'>You are able to unlock this skill!</span><hr /><br /><div class='center'><img src='images/stoneFurnace.png' class='img-large' /></center>","Unlock","Close","UNLOCK_SKILL=crafting");
+				return false;
+			}
+			else
+				return true;
+		break;
+		case "woodcutting":
+			if(axe == 0)
+			{
+				confirmDialogue("90%","To unlock this skill, you must first craft an axe.<hr /><br /><div class='center'><img src='images/axe.png' class='img-large' /></center>","Close","","");
+				return false;
+			}
+			else if(axe == 1 && woodcuttingUnlocked == 0)
+			{
+				confirmDialogue("90%","To unlock this skill, you must first craft an axe.<br /><span style='color:green'>You are able to unlock this skill!</span><hr /><br /><div class='center'><img src='images/axe.png' class='img-large' /></center>","Unlock","Close","UNLOCK_SKILL=woodcutting");
+				return false;
+			}
+			else
+			{
+				initTreeSlots();
+				return true;
+			}
+		break;
+		case "craftingItems":
+			loadCraftablesList();
+		break;
+		case "tree":
+			document.getElementById("body-tag").style.backgroundImage = "url('images/backgrounds/woodcutting.png')";
+		break;
+	}
+	
+	return true;
+}

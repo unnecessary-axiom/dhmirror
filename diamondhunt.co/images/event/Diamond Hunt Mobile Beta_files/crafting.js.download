@@ -1,0 +1,54 @@
+var furnaceChosenOre = "";
+
+function clicksFurnace()
+{
+	if(smeltingCurrentTimer > 0)
+	{
+		confirmDialogue("90%","Your oven is currently running.  Your ore and oil will be lost if you stop your furnace!","Stop Furnace","Nevermind","RESET_FURNACE")
+	}
+	else
+		openDialogue("dialogue-furnace1","90%");
+}
+
+function chooseOreForFurnace(oreChosen)
+{
+	if(window[oreChosen] == 0)
+	{
+		confirmDialogue("90%","You do not have this type of ore.","Close","","");
+		return;
+	}
+	furnaceChosenOre = oreChosen;
+	document.getElementById("dialogue-smeltItemImage").src = "images/" + getBarNameFromOre(oreChosen) + ".png";
+	document.getElementById("dialogue-oilCost").innerHTML = getOilCost(oreChosen) * furnaceCapacity;
+	
+	//has more than capacity
+	if(window[furnaceChosenOre] >= furnaceCapacity)
+		setSellWidgetValues("SMELT=" + oreChosen, furnaceCapacity, furnaceCapacity)
+	else
+		setSellWidgetValues("SMELT=" + oreChosen, window[oreChosen], furnaceCapacity)
+	
+	openDialogue("dialogue-furnace2","90%");
+}
+
+function getOilCost(ore)
+{
+	switch(ore)
+	{
+		case "copper":
+			return 1;
+		case "iron":
+			return 10;
+	}
+}
+
+
+function getBarNameFromOre(ore)
+{
+	switch(ore)
+	{
+		case "copper":
+		return "bronzeBars";
+		default:
+		return ore + "Bars";
+	}
+}

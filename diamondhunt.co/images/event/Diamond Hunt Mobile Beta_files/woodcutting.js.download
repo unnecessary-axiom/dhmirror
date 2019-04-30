@@ -1,0 +1,54 @@
+function initTreeSlots()
+{
+	for(var i = 1; i <= 6; i++)
+	{
+			setTreePatchThumbnail(i, window["tree"+i], window["treeTimer" + i], window["treeUnlocked"+i] == 1)
+	}
+}
+
+function setTreePatchThumbnail(patchId, tree, treeTimer, isUnlocked)
+{
+	var labelTag = document.getElementById("tree-thumbnail-label-" + patchId);
+	var imgTag = document.getElementById("tree-thumbnail-img-" + patchId);
+	
+	if(!isUnlocked)
+	{
+		labelTag.innerHTML = "<span style='color:gold'>Locked</span>";
+		imgTag.src = "images/locked.png";
+		return;
+	}
+	
+	switch(treeTimer)
+	{
+		case 1:
+			labelTag.innerHTML = "READY";
+			imgTag.src = "images/"+tree+"4.png";
+		break;
+		case 0:
+			labelTag.innerHTML = "NONE";
+			imgTag.src = "images/empty100_100.png";
+		break;
+		default:
+			imgTag.src = "images/"+tree+"4_grey.png";
+			labelTag.innerHTML = formatTime(treeTimer);
+		break;
+	}
+}
+
+function loadTree(patchId)
+{
+	var treeTimer = window["treeTimer" + patchId];
+	if(treeTimer == 0)
+	{
+		document.getElementById("tab-tree-top-bar-name-timer").style.display = "none";
+		return;
+	}
+	document.getElementById("tab-tree-top-bar-name-timer").style.display = "";
+	
+	document.getElementById("tab-tree-name").innerHTML = getItemName(window["tree" + patchId]).toUpperCase();
+	
+	if(treeTimer == 1)
+		document.getElementById("tab-tree-timer").innerHTML = "READY";
+	else if(treeTimer > 1)
+		document.getElementById("tab-tree-timer").innerHTML = formatTime(treeTimer);
+}

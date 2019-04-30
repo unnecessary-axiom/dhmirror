@@ -1,0 +1,116 @@
+var webSocket;
+var serverIp = "ws://192.168.2.23:443";
+var websocketReady = false;
+
+function initWebsocket()
+{
+	showLoginMessage("Connecting to Server...");
+	if(!websocketReady)
+	{
+		webSocket = new WebSocket(serverIp);
+		initWebSocketFunctions();
+	}
+	else
+		loginUser();
+}
+
+
+function command(data)
+{
+	//console.log(data);
+	if(data == "SOCKET_CONNECTED")
+	{
+		loginUser();
+	}
+	else if(data == "FORCE_LOGIN")
+	{
+		loginType = "EXISTING_USER";
+		loginUser();
+	}
+	else if(data == "DISPLAY_GAME")
+	{
+		document.getElementById("login-screen").style.display = "none";
+		document.getElementById("game-screen").style.display = "";
+	}
+	else if(data.startsWith("SET_ELEMENT_DATA="))
+	{
+		var dataArray = data.substr(17).split("~");
+		document.getElementById(dataArray[0]).innerHTML = dataArray[1];
+	}
+	else if(data.startsWith("REFRESH_ITEMS_FIRST_TIME="))
+	{
+		refreshItemsFromServer(data.substr(25));
+	}
+	else if(data.startsWith("REFRESH_ITEMS="))
+	{
+		refreshItemsFromServer(data.substr(14));
+	}
+	else if(data.startsWith("MESSAGE="))
+	{
+		confirmDialogue("90%",data.substr(8),"Close","","")
+	}
+	else if(data.startsWith("ST="))
+	{
+		var dataArray = data.substr(3).split("~");
+		scrollText(dataArray[0], dataArray[1], dataArray[2]);
+	}
+	else if(data.startsWith("SWITCH_SCREEN="))
+	{
+		navigate(data.substr(14));
+	}
+	
+	
+}
+
+function sendBytes(data)
+{
+	webSocket.send(data);
+}
+function initWebSocketFunctions()
+{
+	try
+	{
+	
+	webSocket.onerror = function(event) {
+		showLoginMessage("Error connecting to Server.  Try again in 1 minute.")
+	};
+
+	webSocket.onopen = function(event) {
+	  onOpen(event);
+	};
+	
+	webSocket.onclose = function(event) {
+	 onClose(event);
+	};
+
+	webSocket.onmessage = function(event) {
+	  onMessage(event);
+	};
+
+	function onMessage(event) 
+	{
+		command(event.data);
+	}
+
+	function onOpen(event) 
+	{
+		websocketReady = true;
+	}
+	
+	function onClose(event) 
+	{
+		
+	}
+
+	function onError(event) 
+	{
+
+	}
+}
+catch(err) 
+{ 
+	alert(err.message);
+}
+	
+}
+		

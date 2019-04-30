@@ -1,0 +1,41 @@
+var loginType = "EXISTING_USER";
+
+function loginButton()
+{
+	initWebsocket();
+}
+
+function loginUser()
+{
+	if(loginType == "EXISTING_USER")
+	{
+		var username = document.getElementById("login-username").value;
+		var password = document.getElementById("login-password").value;
+		sendBytes("LOGIN="+username+"~"+password);
+	}
+	else if(loginType == "CREATE_USER")
+	{
+		var username = document.getElementById("login-username").value;
+		var password = document.getElementById("login-password").value;
+		var password2 = document.getElementById("login-password2").value;
+		sendBytes("CREATE_USER="+username+"~"+password + "~" + password2);
+	}
+}
+
+function showLoginMessage(message)
+{
+	document.getElementById("login-message").innerHTML = message;
+	document.getElementById("login-message").style.display = "";
+}
+
+function hideLoginMessage()
+{
+	document.getElementById("login-message").style.display = "none";
+}
+
+function enableCreateAccount()
+{
+	document.getElementById("login-password-2-row").style.display = "";
+	document.getElementById("login-button").value = "Create Account";
+	loginType = "CREATE_USER";
+}

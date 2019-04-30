@@ -1,0 +1,556 @@
+
+<!-- saved from url=(0029)http://127.0.0.1:8080/mobile/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script>var jsItemArray=["coins","username","globalLevel","miningLevel","miningUnlocked","minerCost","miners","coinsTotal","miningXp","stone","copper","ores","stoneCapacity","copperCapacity","stoneFurnace","craftingUnlocked","furnaceCapacity","tenBronzeBars","bronzeBars","bronzeOilWell","oil","oilInTotal","oilOutTotal","oilIn","oilOut","oilCapacity","iron","ironTotal","ironBars","smeltingCurrentTimer","smeltingCurrentOreAt","smeltingCurrentOreTo","sapphire","emerald","ruby","diamond","sapphireTotal","emeraldTotal","rubyTotal","diamondTotal","rake","sapphireRake","emeraldRake","rubyRake","diamondRake","axe","sapphireAxe","emeraldAxe","rubyAxe","diamondAxe","woodcuttingUnlocked","woodcuttingXp","treeUnlocked1","tree1","treeTimer1","logs","treeUnlocked2","tree2","treeTimer2","treeUnlocked3","tree3","treeTimer3","treeUnlocked4","tree4","treeTimer4","treeUnlocked5","tree5","treeTimer5","treeUnlocked6","tree6","treeTimer6"];</script>
+
+<meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1.0">
+<title>Diamond Hunt Mobile Beta</title>
+<link rel="stylesheet" href="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/style.css" type="text/css">
+<link rel="stylesheet" href="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/jquery-ui.css" type="text/css">
+<script src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/jquery.js.download" type="text/javascript"></script>
+<script src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/jquery-ui.js.download"></script>
+<script src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/socket.js.download" type="text/javascript"></script>
+<script src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/misc.js.download" type="text/javascript"></script>
+<script src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/dialogue.js.download" type="text/javascript"></script>
+<script src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/login.js.download" type="text/javascript"></script>
+<script src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/navigation.js.download" type="text/javascript"></script>
+<script src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/items.js.download" type="text/javascript"></script>
+<script src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/levels.js.download" type="text/javascript"></script>
+<script src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/animations.js.download" type="text/javascript"></script>
+<script src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/crafting.js.download" type="text/javascript"></script>
+<script src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/dynamic-loader.js.download" type="text/javascript"></script>
+<script src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/woodcutting.js.download" type="text/javascript"></script>
+</head>
+
+<body id="body-tag" style="background-image: url(https://diamondhunt.co/images/event/&quot;images/backgrounds/woodcutting.png&quot;);">
+<div id="login-screen" style="display: none;">
+<img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/mobileBanner.png" class="horizontal-100 banner">
+
+<div class="horizontal-100 login-panel">
+<form onsubmit="loginButton(); return false;">
+	<h1>
+	Play
+	</h1>
+	<table width="100%">
+		<tbody><tr><td colspan="2"><div style="" class="login-message" id="login-message">Loading...</div></td></tr>
+		<tr><td colspan="2"><input id="login-username" value="smitty" type="text" placeholder="Username"></td></tr>
+		<tr><td colspan="2"><input id="login-password" value="smitt" type="password" placeholder="Password"></td></tr>
+		<tr style="display:none;" id="login-password-2-row"><td colspan="2"><input id="login-password2" type="password" placeholder="Confirm Password"></td></tr>
+		<tr><td colspan="2"><br></td></tr>
+		<tr>
+			<td width="50%"><input id="login-button" class="button-highlighted" type="submit" value="Login"></td>
+			<td width="50%"><input ontouchstart="enableCreateAccount();this.style.display=&#39;none&#39;;" type="button" value="New Account"></td>
+		</tr>
+	</tbody></table>
+	<br><br>
+</form>
+</div>
+
+</div>
+<div style="" id="game-screen">
+<div class="game-screen" style="color:white;">
+<!-- dialogue -->
+<div id="dialogue-profile" style="display:none;" title="Profile">
+
+
+<div class="main-button">
+<table>
+	<tbody><tr>
+	<td><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/whiteGear.png" class="img-medium"></td>
+	<td style="text-align:right;padding-right:20px;">PROFILE</td>
+	</tr>
+</tbody></table>
+</div>
+
+<div class="main-button">
+<table>
+	<tbody><tr>
+	<td><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/back.png" class="img-medium"></td>
+	<td style="text-align:right;padding-right:20px;"><span style="color:gold">LOGOUT</span></td>
+	</tr>
+</tbody></table>
+</div>
+</div>
+<!-- end dialogue -->
+
+
+<!-- dialogue -->
+<div id="dialogue-confirm" style="display:none;" title="Server Message">
+<input type="hidden" value="" id="dialogue-confirm-cmd">
+<p id="dialogue-confirm-text"></p>
+<br>
+<input type="button" style="background-color:rgb(42, 142, 142);" value="" onclick="confirmedDialogue(this, document.getElementById(&#39;dialogue-confirm-cmd&#39;).value)" id="dialogue-confirm-yes"> 
+<br><br>
+<input onclick="$(this).closest(&#39;.ui-dialog-content&#39;).dialog(&#39;close&#39;);" type="button" value="" id="dialogue-confirm-no">
+</div>
+<!-- end dialogue -->
+
+<!-- dialogue -->
+<div id="dialogue-furnace1" style="display:none;" title="Select an Ore">
+
+<div class="main-button">
+<table>
+	<tbody><tr onclick="chooseOreForFurnace(&#39;copper&#39;);$(this).closest(&#39;.ui-dialog-content&#39;).dialog(&#39;close&#39;);">
+	<td><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/copper.png" class="img-medium"></td>
+	<td style="text-align:right;padding-right:20px;">
+	BRONZE
+	<span style="font-size:10pt;">
+	<hr><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/oil_white.png" class="img-tiny"> 1
+	<br>
+	<img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/craftingSkill2.png" class="img-tiny"> 20 XP
+	</span></td>
+	</tr>
+</tbody></table>
+</div>
+
+<div class="main-button">
+<table>
+	<tbody><tr onclick="chooseOreForFurnace(&#39;iron&#39;);$(this).closest(&#39;.ui-dialog-content&#39;).dialog(&#39;close&#39;);">
+	<td><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/iron.png" class="img-medium"></td>
+	<td style="text-align:right;padding-right:20px;">
+	IRON 
+	<span style="font-size:10pt;">
+	<hr><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/oil_white.png" class="img-tiny"> 50
+	<br>
+	<img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/craftingSkill2.png" class="img-tiny"> 250 XP
+	</span></td>
+	</tr>
+</tbody></table>
+</div>
+
+<input onclick="$(this).closest(&#39;.ui-dialog-content&#39;).dialog(&#39;close&#39;);" type="button" value="Close">
+</div>
+<!-- end dialogue -->
+
+<!-- dialogue -->
+<div id="dialogue-furnace2" style="display:none;" title="Configure Furnace">
+
+<center>
+<div class="basic-smallbox-light">
+	<img id="dialogue-smeltItemImage" class="img-medium">
+	<br>
+	<img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/oil.png" class="img-small"><span id="dialogue-oilCost">0</span>
+</div>
+</center>
+
+<hr>
+<br>
+
+<table class="dialogue-sellItemTable" width="100%">
+<input type="hidden" value="0">
+<input type="hidden" value="">
+ <colgroup>
+    <col style="width:40px">
+    <col style="">    
+    <col style="width:40px">
+  </colgroup>  
+<tbody><tr>
+<td onclick="setAmountToSellWidget(-1, sellMaxValue, true)">
+-
+</td>
+<td style="background-color:#004f99;font-size:20pt;">
+<input type="text" onkeypress="return isNumberKey(event)" onkeyup="setSellAmountWidget(this)" data-item-sellamount="0" tabindex="-1" class="input-text-sellItem">
+</td>
+<td onclick="setAmountToSellWidget(1, sellMaxValue, true)">
++
+</td>
+</tr>
+<tr>
+<td colspan="3">
+<div onclick="setAmountToSellWidget(parseInt(0.5 * sellMaxValue), null, false);" style="float: left; width: 48%;border-right:1px solid white;">HALF</div>
+<div onclick="setAmountToSellWidget(sellMaxValue, null, false);" style="float: left; width: 48%;border-left: 1px solid white;">MAX</div>
+</td>
+</tr>
+</tbody></table>
+<br>
+<input class="button-highlighted" onclick="sendWidgetSellToServer();$(this).closest(&#39;.ui-dialog-content&#39;).dialog(&#39;close&#39;);" type="button" value="Smelt">
+<br><br>
+<input onclick="$(this).closest(&#39;.ui-dialog-content&#39;).dialog(&#39;close&#39;);" type="button" value="Close">
+<br><br>
+</div>
+<!-- end dialogue -->
+
+
+<!-- dialogue -->
+<div id="dialogue-sellItem" style="display:none;" title="Sell Item">
+<center>
+<div class="basic-smallbox-light">
+	<input type="hidden" value="" id="dialogue-sellItemChosen">
+	<img id="dialogue-sellItemImage" class="img-medium">
+	<br>
+	<img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/coins.png" class="img-small"><span id="dialogue-itemCost">0</span>
+
+</div>
+
+<hr>
+<br>
+<table class="dialogue-sellItemTable" width="100%">
+<input type="hidden" value="0">
+<input type="hidden" value="">
+ <colgroup>
+    <col style="width:40px">
+    <col style="">    
+    <col style="width:40px">
+  </colgroup>  
+<tbody><tr>
+<td onclick="setAmountToSellWidget(-1, sellMaxValue, true)">
+-
+</td>
+<td style="background-color:#004f99;font-size:20pt;">
+<input type="text" onkeypress="return isNumberKey(event)" onkeyup="setSellAmountWidget(this)" data-item-sellamount="0" tabindex="-1" class="input-text-sellItem">
+</td>
+<td onclick="setAmountToSellWidget(1, sellMaxValue, true)">
++
+</td>
+</tr>
+<tr>
+<td colspan="3">
+<div onclick="setAmountToSellWidget(parseInt(0.5 * sellMaxValue), null, false);" style="float: left; width: 48%;border-right:1px solid white;">HALF</div>
+<div onclick="setAmountToSellWidget(sellMaxValue, null, false);" style="float: left; width: 48%;border-left: 1px solid white;">MAX</div>
+</td>
+</tr>
+</tbody></table></center>
+<br>
+<input class="button-highlighted" onclick="sendWidgetSellToServer();$(this).closest(&#39;.ui-dialog-content&#39;).dialog(&#39;close&#39;);" type="button" value="Sell">
+<br><br>
+<input onclick="$(this).closest(&#39;.ui-dialog-content&#39;).dialog(&#39;close&#39;);" type="button" value="Close">
+</div>
+<!-- end dialogue -->
+<!-- top bar -->
+<div class="div-fixed-top-bar">
+	<table class="table-status-bar">
+	<tbody><tr>
+	<td width="33%"><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/coins.png" class="img-small"> <span data-item-display="coins">450,361</span></td>
+	<td width="33%" style="text-align:center;"><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/globalLevel.png" class="img-small"> <span data-item-display="globalLevel">0</span></td>
+	<td style="text-align:right;" width="33%"><span onclick="openDialogue(&#39;dialogue-profile&#39;,&#39;90%&#39;);">...</span></td>
+	</tr>
+	</tbody></table>
+</div>
+<br>
+<br>
+
+
+<!-- tab main -->
+<div id="tab-main" style="display: none;">
+
+<!-- skill btn mining -->
+<div class="main-button">
+<table>
+	<tbody><tr onclick="navigate(&#39;mining&#39;)">
+	<td><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/miningSkill.png" class="img-medium"></td>
+	<td style="text-align:right;padding-right:20px;">
+		<span style="color:gold">
+			<span id="menu-button-mining-level">Level 28</span>
+			<span style="" id="menu-button-mining-xp-bar">
+			<div "tooltip-skills-mining-xp-left"="" class="skill-xp-bar">
+				<div id="inner-skill-level-mining" data-item-display="miningXp" class="skill-xp-label">37,302</div>
+				<div id="inner-skill-xp-bar-mining" class="inner-skill-xp-bar" style="min-width: 48.5552%; max-width: 48.5552%;"></div>
+			</div>
+			</span>
+		</span>
+	</td>
+	</tr>
+</tbody></table>
+</div>
+
+<!-- skill btn crafting -->
+<div style="" id="main-skill-button-crafting" class="main-button">
+<table>
+	<tbody><tr onclick="navigate(&#39;crafting&#39;)">
+	<td><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/craftingSkill.png" class="img-medium"></td>
+	<td style="text-align:right;padding-right:20px;">
+		<span style="color:gold">
+			<span id="menu-button-crafting-level">Level 10</span>
+			<span style="" id="menu-button-crafting-xp-bar">
+			<div "tooltip-skills-crafting-xp-left"="" class="skill-xp-bar">
+				<div id="inner-skill-level-crafting" data-item-display="craftingXp" class="skill-xp-label">1,360</div>
+				<div id="inner-skill-xp-bar-crafting" class="inner-skill-xp-bar" style="min-width: 60.101%; max-width: 60.101%;"></div>
+			</div>
+			</span>
+		</span>
+	</td>
+	</tr>
+</tbody></table>
+</div>
+
+<!-- skill btn woodcutting -->
+<div style="" id="main-skill-button-woodcutting" class="main-button">
+<table>
+	<tbody><tr onclick="navigate(&#39;woodcutting&#39;)">
+	<td><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/woodcuttingSkill.png" class="img-medium"></td>
+	<td style="text-align:right;padding-right:20px;">
+		<span style="color:gold">
+			<span id="menu-button-woodcutting-level">Level 1</span>
+			<span style="" id="menu-button-woodcutting-xp-bar">
+			<div "tooltip-skills-woodcutting-xp-left"="" class="skill-xp-bar">
+				<div id="inner-skill-level-woodcutting" data-item-display="woodcuttingXp" class="skill-xp-label">0</div>
+				<div id="inner-skill-xp-bar-woodcutting" class="inner-skill-xp-bar"></div>
+			</div>
+			</span>
+		</span>
+	</td>
+	</tr>
+</tbody></table>
+</div>
+
+
+
+<div class="main-button">
+<table>
+	<tbody><tr onclick="navigate(&#39;shop&#39;)">
+	<td><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/shop.png" class="img-medium"></td>
+	<td style="text-align:right;padding-right:20px;">SHOP</td>
+	</tr>
+</tbody></table>
+</div>
+</div>
+
+<!-- tab mining -->
+<div id="tab-mining" style="display:none;">
+
+<div class="main-button">
+<table>
+	<tbody><tr onclick="navigate(&#39;main&#39;)">
+	<td><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/back.png" class="img-small"></td>
+	<td style="text-align:right;padding-right:20px;">BACK</td>
+	</tr>
+</tbody></table>
+</div>
+
+<div class="main-button-lighter">
+<table>
+	<tbody><tr onclick="navigate(&#39;miningOres&#39;)">
+	<td><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/miningSkill.png" class="img-small"></td>
+	<td style="text-align:right;padding-right:20px;">KEY ITEMS</td>
+	</tr>
+</tbody></table>
+</div>
+
+
+<div id="item-section-mining-1">
+
+<div class="main-button-lighter" onclick="clicksItem(&#39;oil&#39;)" id="item-box-oil" style="background-color: rgb(26, 26, 26);"><table><tr><td><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/oil.png" class="img-medium"></td><td class="main-button-table-tr-td2"><span class="main-button-span-item-owned" id="item-box-amount-oil">20 </span><span>OIL</span><hr class="no-space"><span class="main-button-span-desc"><span class="wrap-text"><b>Capacity:</b> <span style="vertical-align: text-top;" data-item-display="oilCapacity">20</span><br><span class="wrap-text"><span><b>+ Oil/second:</b> <span style="vertical-align: text-top;color:lime;" data-item-display="oilIn">0</span></span><br><span id="oil-out-label" style="display:none;"><b>- Oil/second:</b> <span style="vertical-align: text-top;color:red;" data-item-display="oilOut">0</span></span></span></span></span></td></tr></table></div><div class="main-button-lighter" onclick="clicksItem(&#39;stone&#39;)" id="item-box-stone" style="background-color: rgb(26, 26, 26);"><table><tr><td><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/stone.png" class="img-medium"></td><td class="main-button-table-tr-td2"><span class="main-button-span-item-owned" id="item-box-amount-stone">100 </span><span>STONE</span><hr class="no-space"><span class="main-button-span-desc"><span class="wrap-text">Capacity: <span style="vertical-align: text-top;" data-item-display="stoneCapacity">100</span></span><br><span class="wrap-text"><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/coins.png" class="img-tiny"> 1 </span></span></td></tr></table></div><div class="main-button-lighter" onclick="clicksItem(&#39;copper&#39;)" id="item-box-copper" style="background-color: rgb(26, 26, 26);"><table><tr><td><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/copper.png" class="img-medium"></td><td class="main-button-table-tr-td2"><span class="main-button-span-item-owned" id="item-box-amount-copper">20 </span><span>COPPER</span><hr class="no-space"><span class="main-button-span-desc"><span class="wrap-text">Capacity: <span style="vertical-align: text-top;" data-item-display="copperCapacity">20</span></span><br><span class="wrap-text"><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/coins.png" class="img-tiny"> 2 </span></span></td></tr></table></div><div class="main-button-lighter" onclick="clicksItem(&#39;iron&#39;)" id="item-box-iron" style="background-color: rgb(26, 26, 26);"><table><tr><td><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/iron.png" class="img-medium"></td><td class="main-button-table-tr-td2"><span class="main-button-span-item-owned" id="item-box-amount-iron">5 </span><span>IRON</span><hr class="no-space"><span class="main-button-span-desc"><span class="wrap-text">Capacity: <span style="vertical-align: text-top;" data-item-display="ironCapacity">5</span></span><br><span class="wrap-text"><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/coins.png" class="img-tiny"> 5 </span></span></td></tr></table></div></div>
+</div>
+
+<!-- tab miningores -->
+<div id="tab-miningOres" style="display:none;">
+
+<div class="main-button">
+<table>
+	<tbody><tr onclick="navigate(&#39;mining&#39;)">
+	<td><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/back.png" class="img-small"></td>
+	<td style="text-align:right;padding-right:20px;">BACK</td>
+	</tr>
+</tbody></table>
+</div>
+
+
+<div id="item-section-mining-2">
+
+<div class="main-button-lighter" onclick="clicksItem(&#39;miners&#39;)" id="item-box-miners" style="background-color: rgb(77, 38, 0);"><table><tr><td><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/miners.png" class="img-medium"></td><td class="main-button-table-tr-td2"><span class="main-button-span-item-owned" id="item-box-amount-miners">10 </span><span>MINERS</span><hr class="no-space"><span class="main-button-span-desc"><span class="wrap-text">Mines various types of ores.</span></span></td></tr></table></div><div class="main-button-lighter" onclick="clicksItem(&#39;bronzeOilWell&#39;)" id="item-box-bronzeOilWell" style="background-color: rgb(77, 38, 0); display: none;"><table><tr><td><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/bronzeOilWell.png" class="img-medium"></td><td class="main-button-table-tr-td2"><span></span><span>OIL WELL</span><hr class="no-space"><span class="main-button-span-desc"><span class="wrap-text">+1 oil per second.</span></span></td></tr></table></div></div>
+</div>
+<!-- end tab -->
+
+
+<!-- tab crafting -->
+<div id="tab-crafting" style="display:none;">
+
+<div class="main-button">
+<table>
+	<tbody><tr onclick="navigate(&#39;main&#39;)">
+	<td><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/back.png" class="img-small"></td>
+	<td style="text-align:right;padding-right:20px;">BACK</td>
+	</tr>
+</tbody></table>
+</div>
+
+
+<div class="main-button-lighter">
+<table>
+	<tbody><tr onclick="navigate(&#39;craftingItems&#39;)">
+	<td><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/hammer.png" class="img-small"></td>
+	<td style="text-align:right;padding-right:20px;">CRAFT</td>
+	</tr>
+</tbody></table>
+</div>
+
+<div id="item-section-crafting-1">
+
+<div class="main-button-lighter" onclick="clicksItem(&#39;stoneFurnace&#39;)" id="item-box-stoneFurnace" style="background-color: rgb(77, 77, 77);"><table><tr><td><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/stoneFurnace.png" class="img-medium"></td><td class="main-button-table-tr-td2"><span></span><span>FURNACE</span><hr class="no-space"><span class="main-button-span-desc"><span>Max load: <span style="vertical-align: text-top;" data-item-display="furnaceCapacity">10</span></span><br><span style="color:lime;display:none;" id="smelting-label">Smelting <span style="vertical-align: text-top;" data-item-display="smeltingCurrentOreAt">0</span>/<span style="vertical-align: text-top;" data-item-display="smeltingCurrentOreTo"></span></span></span></td></tr></table></div><div class="main-button-lighter" onclick="clicksItem(&#39;bronzeBars&#39;)" id="item-box-bronzeBars" style="background-color: rgb(26, 26, 26);"><table><tr><td><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/bronzeBars.png" class="img-medium"></td><td class="main-button-table-tr-td2"><span class="main-button-span-item-owned" id="item-box-amount-bronzeBars">41 </span><span>BARS</span><hr class="no-space"><span class="main-button-span-desc"><span class="wrap-text"><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/coins.png" class="img-tiny"> 10 </span></span></td></tr></table></div><div class="main-button-lighter" onclick="clicksItem(&#39;ironBars&#39;)" id="item-box-ironBars" style="background-color: rgb(26, 26, 26);"><table><tr><td><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/ironBars.png" class="img-medium"></td><td class="main-button-table-tr-td2"><span class="main-button-span-item-owned" id="item-box-amount-ironBars">2 </span><span>BARS</span><hr class="no-space"><span class="main-button-span-desc"><span class="wrap-text"><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/coins.png" class="img-tiny"> 50 </span></span></td></tr></table></div></div>
+</div>
+<!-- end tab -->
+
+
+<!-- tab craft an item-->
+<div id="tab-craftingAnItem" style="display:none;">
+
+<div class="main-button">
+<table>
+	<tbody><tr onclick="navigate(&#39;craftingItems&#39;)">
+	<td><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/back.png" class="img-small"></td>
+	<td style="text-align:right;padding-right:20px;">BACK</td>
+	</tr>
+</tbody></table>
+</div>
+
+
+<div id="item-section-crafting-an-item">
+
+</div>
+
+</div>
+<!-- end tab -->
+
+<!-- tab crafting items-->
+<div id="tab-craftingItems" style="display:none;">
+
+<div class="main-button">
+<table>
+	<tbody><tr onclick="navigate(&#39;crafting&#39;)">
+	<td><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/back.png" class="img-small"></td>
+	<td style="text-align:right;padding-right:20px;">BACK</td>
+	</tr>
+</tbody></table>
+</div>
+
+
+<div id="item-section-crafting-3">
+
+</div>
+
+
+</div>
+<!-- end tab -->
+
+
+<!-- tab woodcutting -->
+<div id="tab-woodcutting" style="display: none;">
+	<div class="main-button">
+	<table>
+		<tbody><tr onclick="navigate(&#39;main&#39;)">
+		<td><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/back.png" class="img-small"></td>
+		<td style="text-align:right;padding-right:20px;">BACK</td>
+		</tr>
+	</tbody></table>
+	</div>
+	
+	<div class="main-button">
+	<table class="table-tree-buttons">
+		<tbody><tr>
+			<td onclick="loadTree(1);navigate(&#39;tree&#39;)">
+				<img id="tree-thumbnail-img-1" src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/tree4_grey.png" class="img-medium"><br>
+				<span id="tree-thumbnail-label-1">1:56</span>
+			</td>
+			<td>
+				<img id="tree-thumbnail-img-2" src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/locked.png" class="img-medium"><br>
+				<span id="tree-thumbnail-label-2"><span style="color:gold">Locked</span></span>
+			</td>
+			<td>
+				<img id="tree-thumbnail-img-3" src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/locked.png" class="img-medium"><br>
+				<span id="tree-thumbnail-label-3"><span style="color:gold">Locked</span></span>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<img id="tree-thumbnail-img-4" src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/locked.png" class="img-medium"><br>
+				<span id="tree-thumbnail-label-4"><span style="color:gold">Locked</span></span>
+			</td>
+			<td>
+				<img id="tree-thumbnail-img-5" src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/locked.png" class="img-medium"><br>
+				<span id="tree-thumbnail-label-5"><span style="color:gold">Locked</span></span>
+			</td>
+			<td>
+				<img id="tree-thumbnail-img-6" src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/locked.png" class="img-medium"><br>
+				<span id="tree-thumbnail-label-6"><span style="color:gold">Locked</span></span>
+			</td>
+		</tr>
+	</tbody></table>
+	</div>
+	
+	<div id="item-section-woodcutting-1">
+
+	<div class="main-button-lighter" onclick="clicksItem(&#39;axe&#39;)" id="item-box-axe" style="background-color: rgb(26, 51, 0);"><table><tr><td><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/axe.png" class="img-medium"></td><td class="main-button-table-tr-td2"><span></span><span>AXE</span><hr class="no-space"><span class="main-button-span-desc"><span class="wrap-text">Used to chop down trees.</span> <span class="wrap-text">This item can be upgraded with gems.</span></span></td></tr></table></div></div>
+</div>
+
+
+<!-- end tab -->
+
+
+<!-- tab woodcutting -->
+<div id="tab-tree" style="">
+	<div class="main-button">
+	<table>
+		<tbody><tr onclick="navigate(&#39;woodcutting&#39;)">
+		<td><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/back.png" class="img-small"></td>
+		<td style="text-align:right;padding-right:20px;">BACK</td>
+		</tr>
+	</tbody></table>
+	</div>
+	<div id="tab-tree-top-bar-name-timer" class="main-button-lighter">
+	<table>
+		<tbody><tr>
+		<td id="tab-tree-name" class="tab-tree-name">TREE</td>
+		<td id="tab-tree-timer" class="tab-tree-timer">1:56</td>
+		</tr>
+	</tbody></table>
+	</div>
+</div>
+<!-- end tab -->
+
+<!-- tab shop -->
+<div id="tab-shop" style="display:none;">
+
+<div class="main-button">
+<table>
+	<tbody><tr onclick="navigate(&#39;main&#39;)">
+	<td><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/back.png" class="img-small"></td>
+	<td style="text-align:right;padding-right:20px;">BACK</td>
+	</tr>
+</tbody></table>
+</div>
+
+<div id="shop-miners" class="main-button">
+<table>
+	<tbody><tr onclick="sendBytes(&#39;BUY_FROM_SHOP=miners&#39;)">
+	<td><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/miners.png" class="img-medium"></td>
+	<td style="text-align:right;padding-right:20px;">MINER<span style="font-size:10pt;"><hr><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/coins.png" class="img-tiny"> <span data-item-display="minerCost">0</span></span></td>
+	</tr>
+</tbody></table>
+</div>
+
+<div id="shop-stoneFurnace" class="main-button" style="display: none;">
+<table>
+	<tbody><tr onclick="sendBytes(&#39;BUY_FROM_SHOP=stoneFurnace&#39;)">
+	<td><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/stoneFurnace.png" class="img-medium"></td>
+	<td style="text-align:right;padding-right:20px;">STONE FURNACE<span style="font-size:10pt;"><hr><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/coins.png" class="img-tiny"> 50<br><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/stone.png" class="img-tiny"> 10<br></span></td>
+	</tr>
+</tbody></table>
+</div>
+
+<div id="shop-tenBronzeBars" class="main-button" style="display: none;">
+<table>
+	<tbody><tr onclick="sendBytes(&#39;BUY_FROM_SHOP=tenBronzeBars&#39;)">
+	<td><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/tenBronzeBars.png" class="img-medium"></td>
+	<td style="text-align:right;padding-right:20px;"><span style="color:orange">10</span> BRONZE BARS<span style="font-size:10pt;"><hr><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/coins.png" class="img-tiny"> 100<br><img src="Diamond&#32;Hunt&#32;Mobile&#32;Beta_files/craftingSkill2.png" class="img-tiny"> Crafting<br></span></td>
+	</tr>
+</tbody></table>
+</div>
+
+</div>
+
+</div></div>
+
+
+
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function(event) {
+initItemsArray(jsItemArray);
+loadItemBoxes();
+
+});
+
+$(document).mousemove(function(e) 
+{
+    window.mouseX = e.pageX;
+    window.mouseY = e.pageY;
+});
+</script></body></html>

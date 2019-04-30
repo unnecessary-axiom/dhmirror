@@ -1,0 +1,82 @@
+<html>
+<head>
+	<link rel="shortcut icon" href="https://diamondhunt.co/images/diamondhunt.ico">
+	<link rel="stylesheet" href="../css/game-main-style.css.html" type="text/css" />
+	
+	<script>
+	function checkDonateInput(e)
+		{
+			var unicode = e.keyCode
+			
+			if(unicode == 46 || unicode == 44)
+			return false;
+			else
+			return true;
+		}
+	function checkboxDonate(isChecked)
+	{
+		if(isChecked)
+		{
+			document.getElementById("submit-btn").disabled = false;
+		}
+		else
+		{
+		document.getElementById("submit-btn").disabled = true;
+		}
+	}
+	</script>
+</head>
+
+<body>
+
+<div class="top-menu">
+	<table>
+		<tr>
+			<td class="table-top"><a  style="text-decoration:none;color:white;" href="../index.php%3FdonorAch.html" alt="click to view updates">Back</a></td>
+		</tr>
+	</table>
+</div>
+<br /><br />
+
+<div class="donator-box">
+<h1 style="text-align:center">Donators</h1>
+
+<p style="text-align:center;font-size:16pt;border:1px solid black;background-color:gold;padding:5px 20px 5px 20px;">
+To keep it very simple, <b><u>for every buck you contribute, you get one donor token.</u></b><br />
+</p>
+
+
+<div class="basic-form" id="donation-form-box">
+	<div class="basic-form-title" id="donation-form-box-title">
+	Donation Form 	</div>
+	<form name="donator-form" method="post" action="https://diamondhunt.co/paypal/confrim.php">
+	<center>
+	<table>
+		
+		<tr>
+			<td class="no-borders">Username:</td>
+			<td class="no-borders"><input type="text" id="nickname" name="nickname" placeholder="Enter any username." /></td>
+		</tr>
+		<tr>
+			<td class="no-borders">Amount to Donate:</td>
+			<td class="no-borders"><input type="text" name="donation" id="donation" onkeypress="return checkDonateInput(event)" placeholder="0" /></td>
+		</tr>
+		<tr>
+			<td class="no-borders">Is this a gift to another player?:</td>
+			<td class="no-borders"><input type="radio" name="gift" /> Yes <input type="radio" name="gift" /> No</td>
+		</tr>
+	</table>
+	<br />
+	<p style="text-align:center;border:1px solid black;background-color:silver;padding:5px 20px 5px 20px;display:inline-block;"><input type="checkbox" onclick="checkboxDonate(this.checked)">I understand that a donation cannot be refunded, even if your account gets terminated.</p>
+	<br /><br />
+	<input type="submit" name="submit" id="submit-btn" disabled="true" value="Secure Donate with PayPal" /><input type="reset" />
+	</center>
+	
+	</form>
+	</div>
+</div>
+<p style="text-align:center;border:1px solid black;background-color:silver;padding:5px 20px 5px 20px;">
+Your donations are going towards the servers.
+</p>
+</body>
+</html>

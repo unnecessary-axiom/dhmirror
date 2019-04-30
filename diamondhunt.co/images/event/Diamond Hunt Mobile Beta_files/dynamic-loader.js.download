@@ -1,0 +1,125 @@
+function CraftingRecipe(itemName, skill, skillLevel, recipe, recipeCost, description, isMultiCraft, itemNameDisplay)
+{
+    this.itemName = itemName;
+	this.skill = skill;
+    this.skillLevel = skillLevel;
+    this.recipe = recipe;
+    this.recipeCost = recipeCost;
+	this.description = description;
+	this.isMultiCraft = isMultiCraft;
+	this.itemNameDisplay = itemNameDisplay;
+}
+
+function loadCraftablesList()
+{
+		document.getElementById("item-section-crafting-3").innerHTML = "";
+		var craftingRecipes = [];
+		var craftableItemName = "";
+		var section = "item-section-crafting-3";
+		
+		craftableItemName = "bronzeOilWell";
+		if(window[craftableItemName] == 0)
+		{
+			craftingRecipes[craftableItemName] = (new CraftingRecipe(craftableItemName,["crafting"],[1], ["bronzeBars"],[10], "Gain 1 oil per second.",false,"Oil Well"));
+			console.log(craftingRecipes);
+			addRecipeToTable(craftingRecipes[craftableItemName], section);
+		}
+		
+		craftableItemName = "axe";
+		if(window[craftableItemName] == 0)
+		{
+			craftingRecipes[craftableItemName] = (new CraftingRecipe(craftableItemName,["crafting"],[10], ["ironBars"],[1], "Ability to cut down trees.",false,"Axe"));
+			console.log(craftingRecipes);
+			addRecipeToTable(craftingRecipes[craftableItemName], section);
+		}
+}
+
+function addRecipeToTable(craftingRecipeChosen, section)
+{
+	var itemName = craftingRecipeChosen.itemName;
+	var skill = craftingRecipeChosen.skill; //array
+	var skillLevel = craftingRecipeChosen.skillLevel; // array
+	var recipe = craftingRecipeChosen.recipe; //array
+	var recipeCost = craftingRecipeChosen.recipeCost; //array
+	var isMultiCraftOn = craftingRecipeChosen.isMultiCraft;
+	var itemNameDisplay = craftingRecipeChosen.itemNameDisplay;
+	
+	var sectionDiv = document.getElementById(section);
+	var divButton = document.createElement("div");
+	divButton.setAttribute("class","main-button-lighter");
+	var tableElement = document.createElement("table");
+	var trElement = document.createElement("tr");
+	
+	//td 1
+	var tdElement = document.createElement("td");
+	var imgElement = document.createElement("img");
+	imgElement.setAttribute("src","images/" + itemName + ".png");
+	imgElement.setAttribute("class","img-medium");
+	
+	//td 2
+	var tdElement2 = document.createElement("td");
+	tdElement2.setAttribute("class","main-button-table-tr-td2");
+
+	
+	//name
+	var span2 = document.createElement("span");
+	if(itemNameDisplay == null)
+		span2.innerHTML = getItemName(itemName).toUpperCase();
+	else
+		span2.innerHTML = itemNameDisplay;
+	
+	var hr1 = document.createElement("hr");
+	hr1.setAttribute("class","no-space");
+	
+	//desc
+	var span3 = document.createElement("span");
+	span3.setAttribute("class","main-button-span-desc");
+	var spanThreeHTML = "";
+	
+	//level needed label
+	for(var i = 0; i < skill.length; i++)
+	{
+		var color = "red";
+		if(getLevel(window[skill[i] + "Xp"]) >= skillLevel[i])
+			color = "lime";
+		
+		if(skill == "crafting")
+			spanThreeHTML += "<img src='images/"+skill[i]+"Skill2.png' class='img-tiny' />"; //lighter image
+		else
+			spanThreeHTML += "<img src='images/"+skill[i]+"Skill.png' class='img-tiny' />";
+		spanThreeHTML += "<span style='color:"+color+"'> Level " + skillLevel[i] + "</span>";
+		spanThreeHTML += "<br />";
+	}
+	
+	//level needed label
+	for(var i = 0; i < recipe.length; i++)
+	{
+		spanThreeHTML += "<img src='images/"+recipe[i]+".png' class='img-tiny' />";
+		
+		var color = "red";
+		if(window[recipe[i]] >= recipeCost[i])
+			color = "lime";
+		
+		spanThreeHTML += " <span style='color:"+color+"'>" + recipeCost[i] + "</span>";
+		spanThreeHTML += "<br />";
+	}
+	
+	span3.innerHTML = spanThreeHTML;
+	
+
+	tdElement2.appendChild(span2);
+	tdElement2.appendChild(hr1);
+	tdElement2.appendChild(span3);
+	tdElement.appendChild(imgElement);
+	trElement.appendChild(tdElement);
+	trElement.appendChild(tdElement2);
+	tableElement.appendChild(trElement);
+	divButton.appendChild(tableElement);
+	sectionDiv.appendChild(divButton);
+	
+	$(divButton).click(function() 
+	{
+		confirmRecipeDialogue(craftingRecipeChosen);
+	});
+	
+}

@@ -1,0 +1,424 @@
+May 5, 2017
+
+-update log moved to https://www.diamondhunt.co/updatelog.html
+
+May 2, 2017
+
+-rocket finished
+-reduced number of stardust logs needed for the witches potion from 500 to 200 (those who finished the quest already may get a refund by re-clicking on the quest)
+-fixed XP bars under the skills section
+-workers now display when they come back without the need of clicking on them
+
+May 1, 2017
+
+-the market will no longer let you post the same item twice at the same time
+-the cooldown for posting and removing an item has now 3 different timers instead of 1 global one
+-whale and rainbowfish coded
+-new craftable (50% done, can be crafted and bound but not usable yet - it will be ready next patch tomorow)
+
+April 30, 2017
+
+-using stardust logs into the charcoal foundry will now give you stardust like the oven
+-fixed pm's with people who have spaces.  Replace all spaces in a username with an underscore '_'
+-added more market slots
+-raised the crafting level required for the one small favour quest as it requires a large vial to complete
+-fixed max level icons for chat
+
+April 28, 2017
+
+-added pirates and stardust crystal potion to the stats page
+-visit the shop owner for a chat, if you have a decent level he might have something for you
+-went over and fixed most bug submissions.  Thanks for the help guys! (Those who submit legit bugs)
+-you may now click players on the hiscores (in game) to see the player stats
+
+April 27, 2017
+
+-stats page on hiscores
+
+April 24, 2017
+
+-new quest
+-new craftable @ level 60
+-fixed a bug while making potions where it would use the wrong vials
+
+April 24, 2017
+
+-read/answered and fixed most bug submissions
+-vials of water are now seperated into 3 tiers, making sand a much needed source as it was intended
+-4 new potions
+-those who had something growing in patch 5 and 6 will now be able to harvest even if the donation has expired.
+-chopping down maple trees grown in a farming patch will also give maple syrup given you have the tap
+-DONE MY EXAMS, expect a lot of updates in the coming days/weeks
+
+April 18
+
+-added spells to magic page 2
+-spells cooldown are now on a tooltip
+-skeleton amulet now works on ice bones
+-players may now click the bones directly to add to bonemeal bin
+-fixed a bug where magic xp would not update the tooltip (on the "xp-left" label), note that players still earned the xp
+-buffed conoe's drop rate on shrimp, sardine, tuna
+-boats & canoe's have a chance of finding maps (canoe has better odds)
+-getting a treasure map from a loot bag now shows '1' instead of the map id.
+-essence potion drop rates: 1 in 16000 - (miningLevel * 150) capped at 1/1000
+-super essence potion drop rates: 1 in 8000 - (miningLevel * 75) capped at 1/500
+-items each now have a pre-configured price limit to be used only if no one is selling that item, this helps prevent alt trading while allowing different items to have different maximum price limits
+-price limits of blue orbs, and bow have been increased
+-magic page 2 now has spells
+
+April 15
+
+-forgot to mention easter event will be over on monday
+-new chat command: /clear to clear chat box
+-crysal leaf seeds timers fixed
+-striped and normal crystal leaf seeds drop rate has been decreased as they give a lot of xp
+-players can now upgrade wands
+-new tradables
+-northern fields loot bags openable
+-you may now make arrows with feathers by clicking on them
+-buffed the drop rates of fire feathers from the volcano
+
+April 13, 2017
+
+-new quest
+-expanded magic (I know there are no new spells, but they are coming and will actually be useful)
+-market limits will no longer be influenced on expired items
+-easter event (not sigil)
+
+April 08, 2017
+
+-new craftable
+-new quest
+-replied/verfied & fixed most of the bug submissions
+-I'm currently in the middle of exams,  I'll do my best to keep updating (exams end April 20th, expect almost daily updates afterwards)
+
+April 05, 2017
+
+-Apologies for lack of content updates.  I just finished the bug submittion form system and I am going to go through the list fixing all the bugs I can find before continuing to add more content.
+
+April 04, 2017
+
+-market now sorts by price then by timeleft
+-added a bug submition form  next to players online
+
+
+April 03, 2017
+
+-new combat area
+-bear fur can be crafted into armour
+-added blue rake orb to the market
+-Those who purchased pirates before the price changes have been refunded next patch
+
+-March 30, 2017
+
+-changed the prices of the later pirates. (25m, 30m, 35m, 40m, 45m, 50m, 60m 70m,85m,100m)
+-changed the way the gem works in your axe in terms of the logs you get.  (Buff)
+-your woodcutting axe now works when farming trees
+-you may no longer use heal out of combat. (This was inteded because before release as your hero didn't replenish his hp after combat but was tested to be too harsh and scrapped)
+-strange leafs tradable
+-The next area is nearly done.  I wanted to release it in this batch but I ran out of time.  It should be released in the next patch.
+
+March 29, 2017
+
+-buffed skeleton bone drops (5 - 15)
+-fixed a bug where items would disappear on the crafting list even though that person could still benefit by crafting more.
+-fixed progress bars in skills tab
+-oil factory workers cost has been reduced from 1 million coins to 100k coins.  Players who hired a worker before this buff will be refunded when clicking on the factory.
+-buffed promethium mining rate. (1/(25000 - (excavatorsOn * 2000))
+-fixed market notification
+-new woodcutting tree with seed drop (farmable too)
+-maple tree seeds farmable
+-new tradables
+
+March 27, 2017
+
+-crafting items in the table will not be hidden if the person has crafted it before (toggable)
+-fixed teleport cooldown in magic
+-fixed a map that was not solvable
+-added bars & promethium to the player market
+
+March 25, 2017
+
+-new craftables
+-added red mushroom seeds, blewits, and snapegrass seeds to the offline tracker
+-in the 'choose area to fight dialogue', black icons means you've never killed that enemy, green means you've killed it at least once, gold more than 50, blue more than 300
+-changed the way the chisel works, the gem inside it will only affect the amount of bonus gem tips you get.  A blue chisel orb now gives a flat 20% boost when opening stardust crystals.
+-players now have a rare chance of getting strange leafs while chopping down trees
+
+March 24, 2017
+
+-players may now change their passwords in profile & settings
+-fixed a bug where refreshing would remove hardcore chat icon
+-essence now sellable on market
+-heat orb enabled
+-chisel sellable and obtainable through loot bags and chests
+-stardust crystals obtainable - opened with a chisel
+
+March 23, 2017
+
+-volcano loot bags openable
+-oil pipe deleteable (right click it)
+-fixed hiscores
+-new tradable
+-the market notification has been removed - it will be fixed and re implemented next patch
+
+March 22, 2017
+
+-fixed market
+-fixed evil snake loot bag
+-fixed brewing requirement for the quest one small favour
+-fixed a bug where images were not displaying when showing what you obtained while offline
+-you will soon be able to change your password in profile & settings
+
+March 21, 2017
+
+-those who disabled the chat will no longer recieve packets that have to do with chatting
+-new magic spell (uses magic page 1)
+-on login, you may now see items you have obtained during your offline time
+-major buff on high level foods in terms of energy / heat. 
+-market notifcation will now be active if a player has coins to collect
+-fixed a bug with treasure maps where it was unsolvable
+
+March 19, 2017
+
+-New area
+-Market will get a rework in terms of the way the dynamic limits work.  It is still easy to manipulate prices (which multiple accounts have been banned already for doing so - please read the rules if you continue to play)
+
+
+March 19, 2017
+
+-changed the furnace interface to let you know if you have the ores/oil to smelt
+-brewing tab / cooks book will automatically update when making potions/food
+-crushers, oil storage 2, 3 can now be destroyed with a right click
+-players may now browse all the items at once.
+
+March 17, 2017
+
+-all except 1 orb is working/bindable
+-chisel is 50% done
+-orbs tradable
+-I realize some items stay stuck in market and are not purchasable - this will be fixed
+-PMs are still an issue for players with spaces in there name, I'm going to be reworking the chat soon and this will fix all these types of issues
+
+March 16, 2017
+
+-Game rules have been updated, read them.
+-I was going to add a one time  market fee of 1 million coins in order to use it, however with feedback from players on reddit and in game I decided to make it so you must have a global level of 30 to use it.
+-Your global level number will now update correctly and your total xp can be viewed if you hover your mouse over it
+-chests openable - note that blue orbs are much rarer then they were on DH1
+-blue orbs 50% coded, obtainable but not bindable yet.  Couldn't finish it today as we had network issues and I had to deal with that
+-fixed the observatory quest
+-hardcore accounts may now convert to a normal account in profile & settings
+-increased the max lenght of characters in chat
+-you may now pm people with spaces in there names by using '+': for example, the user "seal crystal" would be /pm seal+crystal [msg]
+
+March 15, 2017
+
+-new quest
+-fixed snakeskin & batskin on market
+-upper limit for skeleton sword/shield/amulet has been raised
+
+March 14, 2017
+
+-tons more tradables
+-dieing or refreshing during combat no longer gives you double cooldown.
+-farming speed potions ingredients have been lowered significantly
+-hiscores now sort by level, then by xp
+-players can now unequip items by right clicking on their hero
+
+March 13, 2017 (part 2)
+
+-market: added new tradables
+-market: You may not remove an item from the market for 10min after posting it
+-3 new potions
+
+
+March 13, 2017
+
+-fixed a few tooltips that had the wrong info
+-market: a few more tradables (more to be added soon), added a search, made the price limit range more flexible
+
+March 12, 2017
+
+-changed the way market limits are handled.  I'm going to try to go for a dynamic approach.  If this seems to work, we will stick with this system.  Keep in mind the market limits are there strictly to make alt trading more difficult.
+-improved optimization of the market queries.  You should lag a lot less.
+-only the top 10 items are shown
+
+March 12, 2017
+
+-second batch of patches for the market has been released
+-fixed the bug with one map that was unsolvable
+
+March 11, 2017
+
+-market testing phase released - only stone tradable for now until all bugs are fixed
+-market is about 80% in terms of looks and more trading slots.  (1 slot now, 3 slots in future)
+-don't alt trade as it is against the rules and you will be banned.
+
+March 11, 2017
+
+-I'm aware of a few display glitches, hopefully this patch will solve the issue ("negative timers/rollbacks") Note: The rollbacks are not actually roll backs, simply a display glitch
+-Been working on market all day. It will be released in the next update
+
+
+March 10, 2017
+
+-engine changes.  Your game will now use MUCH less resources for your pc.
+-added fishing bait drops to cave loots.
+
+March 10, 2017
+
+-reworked the backend login system
+-market is 50% completed
+-official rules are out:  www.diamondhunt.co/rules.php
+
+March 09, 2017
+
+-timers over woodcutting trees
+-essence potion buff, your mining level will affect the drop rate (at level 1 mining: 1/12k, capped level 70 mining, 1/1k)
+-slight buff on super stardust potion
+-fixed bearfur not showing up (display bug)
+-fixed pickaxe where stone would not convert to xp
+-new oil resource
+-lowered and fixed giant drills mining requirement
+-market is about 20% done, it's quite a big update so I don't want to rush, I wan't it to be bug free on release. 
+
+Match 07, 2017
+
+-fixed delayed ticks when reaching 1.8k + players online
+-new ore available
+-upgrading your pickaxe will allow you to convert better ore in more mining xp
+-new machinery
+
+Match 06, 2017
+
+-fixed the farming bug with grass seeds.
+-props to Ted the Farmer for finding a farming xp exploit and reporting it (issue has been fixed)
+
+
+March 05, 2017
+
+-two new npcs in caves released + loot bags
+-fixed chests from treasure maps from dissapearing (display glitch, those who had some will see them appear)
+-fixed bear fur
+-added new craftable items which uses bones
+-new potion
+
+
+March 05, 2017
+
+-new tree
+-new combat area with npc loot bags + new equipement
+-combat drop tables: www.diamondhunt.co/wiki/combat.php
+-color coded quests to show difficulty
+-fixed wc patches for donors
+-tweaked once again combat formula, in the players favour
+-essence potion fixed
+
+March 02, 2017 (part 2)
+
+-super stardust potion added
+-furnace now has an indicator whether you have the materials or not
+-fishing bait now dropped from the forest monsters
+-treasure maps added (obtained from pirates OR from any monster loot which is extremely rare.  The rarity is based on the monster's levels)
+-fixed a bug where a server message would say you found a diamond when you simply socketed it to an item
+-buffed monster loot (The ent)
+-you may now turn on more notifications in profile & settings
+
+March 2, 2017
+
+-removed quest restriction
+-changed combat forumla
+-content update to be released in 2h from now (see March 2, 2017 part 2)
+
+March 1, 2017
+
+-fixed bar potion
+-fixed a bug with the snake quest where your combat would make you lose xp
+
+
+February 27, 2017
+
+-fixed level up message when cooking
+-fixed the xp stuck on bottom left corner
+-fixed images in the cook's book
+-bar potion fixed
+-added oilstorage 4
+-combat equipement dropped from npcs
+-second tier of loot bags coded + 3rd area of npcs out
+
+February 26, 2017
+
+-anti spam + ip banned added 
+-sand added to rats drop table
+-willow logs will heat furnaces correctly now
+-xp difference tooltip changed to xp left and will update accordingly
+-essences can be looted from any monster loot bag but is very rare
+-hiscores page now shows top 500 players
+-new quest
+
+February 25, 2017
+
+-added an 'xp difference' on xp tooltips + fixed tooltips bug where it wouldn't update on level ups + fixed level up icons
+-new potion
+-magic page reduced from 100m to 1m
+-more food types (after completion of the cooks assistant quest)
+
+February 25, 2017
+
+-hopefully fixed a problem with rollbacks. If you still manage to get rolled back, let me know.  I'm treating rollbacks as a #1 priority.
+-players can now mute people with /mute [player-name]
+-4 new npcs to fight
+-admins (mods not yet, soon) can globablly mute someone
+-added new potions
+-crafting oil storage #3 fixed
+-once we have content up to level 50 in every skill (bug free) the game will go from alpha to beta.  There will be NO account resets.
+-BALANCE: buffed cooking xp for low level fishes as gaining early levels in cooking was a little too harsh
+
+February 24, 2017 (part 2)
+
+-crushers fixed
+-adding a new quest
+-forest npc thief now gives xp
+-ability to display on/off the chat in profiles and settings
+
+February 24, 2017
+
+-apologies for the downtime.  Ofc the game went down 15 min after I went to sleep.  It was a problem on the hosting side and the issue has been resolved.
+-fixed crushers + new mineral
+-Balancing changes: reduced xp earned from fish slighty + sapphires more common now. (1/250k --> 1/150k)
+-profile and settings 10% done
+-right clicking stone, copper, tin and silver will automatically sell your whole pile (can be toggled OFF in profile & settings)
+
+February 23, 2017 (part two)
+
+-improved the item loader, the game should have less hiccups (where things would freeze up for a fraction of a second on every tick)
+-adding crafting to the tabs (next to mining)
+-legendary blood diamond released
+-wheat seeds have been made slighty less common to find
+-fixed consuming honey
+
+
+February 23, 2017
+
+-so every 4 - 6 hours the server seems to freeze.  I'm currently investigating this.  If anyone knows how to trigger it let me know!
+-you may now delete unbound furnaces by right clicking them
+-donor timers were never set to go down, now they do
+-fixed donor woodcutting patches
+-fixed binding oil storage 1 over the second tier.
+-new chat icon (quest icon for those who managed to complete all the quests. (note: a lot more quests to come)
+
+February 22, 2017
+
+-brewing potion now uses your vials of water
+-converting bars with hammer and ores with pickaxe fixed
+-Hitting the TAB button should auto-complete to the last person that you private messaged. (using /pm)
+-I want to appologies for the unstable release of DH2.  For about 2h we had a lot of disconnections.  This has been fixed. (Thanks farfar and vivafnatic for the help)
+
+February 22, 2017
+
+-release of DH2
+
+December 17, 2016
+
+-main engine completed

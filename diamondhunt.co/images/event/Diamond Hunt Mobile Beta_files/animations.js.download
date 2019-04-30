@@ -1,0 +1,13 @@
+function scrollText(icon, colorChosen, textChosen)
+{
+	var imgTag = "";
+	if(icon != "none")
+		imgTag = "<img src='images/"+icon+"' class='img-medium' /> ";
+	
+	var elementToAppend = $('<div class="scroller" style="color:'+colorChosen+'">'+imgTag+textChosen+'</div>').appendTo('body');
+	$(elementToAppend).css({position:"absolute", left:mouseX - 50,top:mouseY - 50});
+	 $(elementToAppend).animate({top: "-=50px"}, function() { 
+	 $(elementToAppend).fadeOut(1000, function() { $(this).remove(); });
+	 });
+
+}

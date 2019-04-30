@@ -1,0 +1,33 @@
+function getLevel(playerXP)
+{
+	if(playerXP == 0)
+		return 1;
+	
+	for(var i = 1; i <= 1000; i++)
+	{
+		var power = 3 + (i / 200);
+		var xp = Math.pow(i, power);
+		if(playerXP < xp)
+			return i - 1;
+	}
+	
+	return 1000;
+}
+
+function getXpNeeded(level)
+{
+	return parseInt(Math.pow(level, 3 + (level / 200)));
+}
+
+function refreshXpBar(skillChosen)
+{
+	var currentXp = window[skillChosen + "Xp"];
+	var nextLevelXp = getXpNeeded(getLevel(currentXp) + 1);
+	var prevLevelXp = getXpNeeded(getLevel(currentXp));
+	
+	
+	var widthFound = ((currentXp-prevLevelXp)/(nextLevelXp - prevLevelXp)) * 100;
+	
+	document.getElementById("inner-skill-xp-bar-" + skillChosen).style.minWidth = widthFound + "%";
+	document.getElementById("inner-skill-xp-bar-" + skillChosen).style.maxWidth = widthFound + "%";
+}

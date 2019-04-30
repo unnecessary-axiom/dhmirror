@@ -1,0 +1,335 @@
+//sets all items to 0
+function initItemsArray(jsItemArrayFromFile)
+{
+	for(var i = 0; i < jsItemArrayFromFile.length; i++)
+	{
+		window[jsItemArrayFromFile[i]] = 0;
+	}
+}
+
+function refreshItemsFromServer(dataItemsFromServer)
+{
+	var dataItemsFromServerArray = dataItemsFromServer.split("~");
+	var dataItemsThatChanged = [];
+
+	for(var i = 0; i < dataItemsFromServerArray.length; i++)
+	{
+		var itemName = dataItemsFromServerArray[i]; i++;
+		var itemValue = dataItemsFromServerArray[i];
+		
+		//check if this item has already been set, if no, then we reset it
+		if(window[itemName] != itemValue)
+		{
+			if(isNaN(itemValue))
+				window[itemName] = itemValue;
+			else
+				window[itemName] = parseFloat(itemValue);
+			
+			dataItemsThatChanged.push(itemName);
+		}
+	}
+	
+	manageChangedItems(dataItemsThatChanged);
+}
+
+function formatNumber(numberToFormat)
+{
+	var characterToAppend = "";
+	if(numberToFormat >= 100000000 && numberToFormat < 10000000000)
+	{
+		numberToFormat /= 1000000;
+		characterToAppend = "M";
+	}
+	else if(numberToFormat >= 10000000000)
+	{
+		numberToFormat /= 1000000000;
+		characterToAppend = "B";
+	}
+	
+	return Math.floor(numberToFormat).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "" + characterToAppend;
+}
+
+function manageChangedItems(dataItemsThatChanged)
+{
+	for(var i = 0; i < dataItemsThatChanged.length; i++)
+	{
+		var newValue = window[dataItemsThatChanged[i]];
+		
+		//set data-item-display
+		var selector = "[data-item-display="+dataItemsThatChanged[i]+"]";
+		var elementsFound = $(selector);
+		for(var j = 0; j < elementsFound.length; j++)
+		{
+			elementsFound[j].innerHTML = formatNumber(newValue);
+		}
+		
+		//special
+		switch(dataItemsThatChanged[i])
+		{
+			case "miningUnlocked":
+				if(miningUnlocked > 0)
+				{
+					document.getElementById("menu-button-mining-level").innerHTML = "Level " + getLevel(miningXp);
+					document.getElementById("menu-button-mining-xp-bar").style.display = "";
+					document.getElementById("main-skill-button-crafting").style.display = ""; //make crafting button visible, but locked
+				}
+			break;
+			case "craftingUnlocked":
+				if(craftingUnlocked > 0)
+				{
+					document.getElementById("menu-button-crafting-level").innerHTML = "Level " + getLevel(craftingXp);
+					document.getElementById("menu-button-crafting-xp-bar").style.display = "";
+					document.getElementById("main-skill-button-woodcutting").style.display = ""; //make woodcutting button visible, but locked
+				}
+			break;
+			
+			case "woodcuttingUnlocked":
+				if(woodcuttingUnlocked > 0)
+				{
+					document.getElementById("menu-button-woodcutting-level").innerHTML = "Level " + getLevel(woodcuttingXp);
+					document.getElementById("menu-button-woodcutting-xp-bar").style.display = "";
+					//document.getElementById("main-skill-button-woodcutting").style.display = ""; //make crafting button visible, but locked
+				}
+			break;
+			
+			case "miningXp":
+					if(miningUnlocked > 0)
+					{
+						document.getElementById("menu-button-mining-level").innerHTML = "Level " + getLevel(miningXp);
+						refreshXpBar("mining");
+					}
+			break;
+			
+
+			
+			case "minerCost":
+					if(minerCost == 0)
+					{
+						document.getElementById("shop-miners").style.display = "none";
+					}
+			break;
+			
+			case "craftingXp":
+					if(miningUnlocked > 0)
+					{
+						document.getElementById("menu-button-crafting-level").innerHTML = "Level " + getLevel(craftingXp);
+						refreshXpBar("crafting");
+					}
+			break;
+			
+			case "woodcuttingXp":
+					if(woodcuttingUnlocked > 0)
+					{
+						document.getElementById("menu-button-woodcutting-level").innerHTML = "Level " + getLevel(woodcuttingXp);
+						refreshXpBar("woodcutting");
+					}
+			break;
+			
+			case "stoneFurnace":
+			{
+				if(stoneFurnace > 0)
+					document.getElementById("shop-stoneFurnace").style.display = "none";
+			}
+			break;
+			
+			case "tenBronzeBars":
+				document.getElementById("shop-tenBronzeBars").style.display = "none";
+			break;
+			
+			case "oilOut":
+				if(oilOut == 0)
+					document.getElementById("oil-out-label").style.display = "none";
+				else
+					document.getElementById("oil-out-label").style.display = "none";
+			break;
+			
+			case "smeltingCurrentTimer":
+				if(smeltingCurrentTimer > 0)
+				document.getElementById("smelting-label").style.display = "";
+			else
+				document.getElementById("smelting-label").style.display = "none";
+			break;
+			
+			case "tree1":
+			case "tree2":
+			case "tree3":
+			case "tree5":
+			case "tree4":
+			case "tree6":
+			case "treeUnlocked1":
+			case "treeUnlocked2":
+			case "treeUnlocked3":
+			case "treeUnlocked5":
+			case "treeUnlocked4":
+			case "treeUnlocked6":
+			case "treeTimer1":
+			case "treeTimer2":
+			case "treeTimer3":
+			case "treeTimer5":
+			case "treeTimer4":
+			case "treeTimer6":
+			if(lastTabId == "woodcutting")
+			{
+					initTreeSlots();
+					loadTree(parseInt(dataItemsThatChanged[i].substr(dataItemsThatChanged[i].length - 1)))
+			}
+			break;
+		}
+		
+		var itemBox = document.getElementById("item-box-" + dataItemsThatChanged[i]);
+		if(itemBox !== null)
+		{
+			if(parseInt(window[dataItemsThatChanged[i]]) > 0)
+			{
+				var itemBoxValueAmountSpan = document.getElementById("item-box-amount-" + dataItemsThatChanged[i]);
+				itemBox.style.display = "";
+				if(itemBoxValueAmountSpan != null)
+					document.getElementById("item-box-amount-" + dataItemsThatChanged[i]).innerHTML = newValue + " ";
+			}
+			else
+				itemBox.style.display = "none";
+		}	
+		
+	}
+}
+
+function getItemValue(itemChosen)
+{
+	if(isNaN(window[itemChosen]))
+		return window[itemChosen];
+	else
+		return parseInt(window[itemChosen]);
+}
+
+function clicksItem(itemChosen)
+{
+	//sellable
+	if(getItemPrice(itemChosen) > 0)
+		openSellDialogue(itemChosen)
+	
+	switch(itemChosen)
+	{
+		case "stoneFurnace":
+			clicksFurnace();
+		break;
+	}
+}
+
+//returns 0 if not sellable
+function getItemPrice(itemChosen)
+{
+	switch(itemChosen)
+	{
+		case "stone":
+			return 1;
+		case "copper":
+			return 2;
+		case "bronzeBars":
+			return 10;
+		case "ironBars":
+			return 50;
+		case "iron":
+			return 5;
+	}
+	
+	return 0;
+}	
+
+function addItemBox(itemChosen, maxAmount, desc, section, color, itemName)
+{
+	var sectionDiv = document.getElementById(section);
+	var divButton = document.createElement("div");
+	divButton.setAttribute("class","main-button-lighter");
+	divButton.setAttribute("onclick","clicksItem('"+itemChosen+"')")
+	divButton.setAttribute("id","item-box-" + itemChosen)
+	divButton.style.backgroundColor = color;
+	divButton.style.display = "none";
+	
+	var tableElement = document.createElement("table");
+	var trElement = document.createElement("tr");
+	
+	//td 1
+	var tdElement = document.createElement("td");
+	var imgElement = document.createElement("img");
+	imgElement.setAttribute("src","images/" + itemChosen + ".png");
+	imgElement.setAttribute("class","img-medium");
+	
+	//td 2
+	var tdElement2 = document.createElement("td");
+	tdElement2.setAttribute("class","main-button-table-tr-td2");
+
+	//amount owned
+	var span1 = document.createElement("span");
+	if(maxAmount >= 0)
+	{
+		span1.setAttribute("class","main-button-span-item-owned");
+		span1.setAttribute("id","item-box-amount-" + itemChosen);
+	}
+	
+	
+	//name
+	var span2 = document.createElement("span");
+	span2.innerHTML = getItemName(itemName).toUpperCase();
+	
+	var hr1 = document.createElement("hr");
+	hr1.setAttribute("class","no-space")
+	//desc
+	var span3 = document.createElement("span");
+	span3.setAttribute("class","main-button-span-desc");
+	span3.innerHTML = desc;
+	
+	//append all
+	tdElement2.appendChild(span1);
+	tdElement2.appendChild(span2);
+	tdElement2.appendChild(hr1);
+	tdElement2.appendChild(span3);
+	tdElement.appendChild(imgElement);
+	trElement.appendChild(tdElement);
+	trElement.appendChild(tdElement2);
+	tableElement.appendChild(trElement);
+	divButton.appendChild(tableElement);
+	sectionDiv.appendChild(divButton);
+}
+
+function loadItemBoxes()
+{
+	//colors
+	var mainColor = "#1a1a1a";
+	var mainColorLight = "#4d4d4d";
+	var mainColorBrown = "#4d2600";
+	var mainColorDarkGreen = "#1a3300";
+	
+	//mining ite1
+	addItemBox("oil", 0, "<span class='wrap-text'><b>Capacity:</b> <span style='vertical-align: text-top;' data-item-display='oilCapacity'>0</span><br /><span class='wrap-text'><span><b>+ Oil/second:</b> <span style='vertical-align: text-top;color:lime;' data-item-display='oilIn'>0</span></span><br /><span id='oil-out-label' style='display:none;'><b>- Oil/second:</b> <span style='vertical-align: text-top;color:red;' data-item-display='oilOut'>0</span></span>", "item-section-mining-1", mainColor,"oil")
+	addItemBox("stone", 0, "<span class='wrap-text'>Capacity: <span style='vertical-align: text-top;' data-item-display='stoneCapacity'></span></span><br /><span class='wrap-text'><img src='images/coins.png' class='img-tiny'> "+getItemPrice('stone')+" </span>", "item-section-mining-1", mainColor,"stone")
+	addItemBox("copper", 0, "<span class='wrap-text'>Capacity: <span style='vertical-align: text-top;'data-item-display='copperCapacity'></span></span><br /><span class='wrap-text'><img src='images/coins.png' class='img-tiny'> "+getItemPrice('copper')+" </span>", "item-section-mining-1", mainColor,"copper")
+	addItemBox("iron", 0, "<span class='wrap-text'>Capacity: <span style='vertical-align: text-top;'data-item-display='ironCapacity'></span></span><br /><span class='wrap-text'><img src='images/coins.png' class='img-tiny'> "+getItemPrice('iron')+" </span>", "item-section-mining-1", mainColor,"iron")
+	
+	//mining item2
+	addItemBox("miners", 10, "<span class='wrap-text'>Mines various types of ores.</span>", "item-section-mining-2", mainColorBrown,"miners")
+	addItemBox("bronzeOilWell", -1, "<span class='wrap-text'>+1 oil per second.</span>", "item-section-mining-2", mainColorBrown,"oilWell")
+
+	//crafting item1
+	addItemBox("stoneFurnace", -1, "<span>Max load: <span style='vertical-align: text-top;' data-item-display='furnaceCapacity'></span></span><br /><span style='color:lime;display:none;' id='smelting-label'>Smelting <span style='vertical-align: text-top;' data-item-display='smeltingCurrentOreAt'>0</span>/<span style='vertical-align: text-top;' data-item-display='smeltingCurrentOreTo'></span>", "item-section-crafting-1", mainColorLight,"furnace")
+	addItemBox("bronzeBars", 0, "<span class='wrap-text'><img src='images/coins.png' class='img-tiny'> "+getItemPrice('bronzeBars')+" </span>", "item-section-crafting-1", mainColor,"Bars")
+	addItemBox("ironBars", 0, "<span class='wrap-text'><img src='images/coins.png' class='img-tiny'> "+getItemPrice('ironBars')+" </span>", "item-section-crafting-1", mainColor,"Bars")
+	
+	
+	//woodcutting item1
+	addItemBox("axe", -1, "<span class='wrap-text'>Used to chop down trees.</span> <span class='wrap-text'>This item can be upgraded with gems.</span>", "item-section-woodcutting-1", mainColorDarkGreen,"Axe")
+}
+
+//Converts camelCase to Camel Case
+function getItemName(itemName)
+{
+	var output = itemName.charAt(0).toUpperCase();
+	for(var i = 1; i < itemName.length; i++)
+	{
+		if(itemName.charAt(i) == itemName.charAt(i).toUpperCase())
+			output += " ";
+		
+		output += itemName.charAt(i);
+	}
+	
+	return output;
+}

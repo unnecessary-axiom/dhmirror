@@ -1,0 +1,89 @@
+
+if (typeof String.prototype.startsWith != 'function') 
+{
+  String.prototype.startsWith = function (str){
+    return this.indexOf(str) == 0;
+	};
+}
+
+var contains = function(needle) {
+    // Per spec, the way to identify NaN is that it is not equal to itself
+    var findNaN = needle !== needle;
+    var indexOf;
+
+    if(!findNaN && typeof Array.prototype.indexOf === 'function') {
+        indexOf = Array.prototype.indexOf;
+    } else {
+        indexOf = function(needle) {
+            var i = -1, index = -1;
+
+            for(i = 0; i < this.length; i++) {
+                var item = this[i];
+
+                if((findNaN && item !== item) || item === needle) {
+                    index = i;
+                    break;
+                }
+            }
+
+            return index;
+        };
+    }
+
+    return indexOf.call(this, needle) > -1;
+};
+
+
+function formatTime(seconds)
+{
+	if(seconds <= 0)
+		return "0";
+	
+	
+	if(seconds < 86400)
+	{
+		var time = seconds;
+		 // Hours, minutes and seconds
+		var hrs = ~~(time / 3600);
+		var mins = ~~((time % 3600) / 60);
+		var secs = time % 60;
+
+		// Output like "1:01" or "4:03:59" or "123:03:59"
+		var ret = "";
+
+		if (hrs > 0) {
+			ret += "" + hrs + ":" + (mins < 10 ? "0" : "");
+		}
+
+		ret += "" + mins + ":" + (secs < 10 ? "0" : "");
+		ret += "" + secs;
+		return ret;
+	}
+	else
+	{
+		var days = parseInt(seconds / 60 / 60 / 24);
+		if(days == 1)
+			return days + " day";
+		else
+			return days + " days";
+	}
+	
+	return 0;
+}
+
+
+function isNumberKey(evt)
+{
+    var charCode = (evt.which) ? evt.which : event.keyCode
+    if (charCode > 31 && (charCode < 48 || charCode > 57))
+        return false;
+    return true;
+}
+
+function isNumberKey(evt)
+{
+    var charCode = (evt.which) ? evt.which : event.keyCode
+    if (charCode > 31 && (charCode < 48 || charCode > 57))
+        return false;
+    return true;
+}

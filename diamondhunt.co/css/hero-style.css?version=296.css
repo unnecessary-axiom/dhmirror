@@ -1,0 +1,168 @@
+div.hero
+{
+	width: 300px;
+	display:inline-block;
+	margin-right:50px;
+	text-align:center;
+	float:left;
+	color:white;
+	font-size:20pt;
+}
+
+div.hero2
+{
+	width: 300px;
+	display:inline-block;
+	margin-right:50px;
+	text-align:center;
+	float:left;
+	color:white;
+	font-size:20pt;
+}
+
+div.monster
+{
+	width: 300px;
+	display:inline-block;
+	margin-right:50px;
+	text-align:center;
+	color:white;
+	font-size:20pt;
+}
+
+.imageHero
+{
+	position: absolute;
+}
+
+div.fight-spellbook
+{
+	margin-left:20px;
+	text-align:left;
+}
+
+span.fight-spell
+{
+	display:inline-block;
+	width:35px;
+	height:35px;
+	margin:3px;
+	cursor:pointer;
+	z-index:0;
+}
+div.hp-bar
+{
+	border:1px solid grey;
+	height:30px;
+	color:white;
+	display:block;
+	text-align:center;
+	min-width:100%;
+	position:relative;
+	margin-left:5%;
+	background-color:black;
+	margin-bottom:10px;
+}
+
+
+table.table-hero-stats-in-combat
+{
+	border-collapse: collapse;
+	border:1px solid grey;
+	table-layout: fixed;
+	font-size:14pt;
+	width:300px;
+	float:right;
+	margin-top:50px;
+	border-right:none;
+}
+
+table.table-hero-stats-in-combat td
+{
+	padding:10px;
+	background-color:#1a1100;
+}
+
+
+table.table-hero-stats
+{
+	border-collapse: collapse;
+	margin-left:20px;
+	border:1px solid grey;
+	table-layout: fixed;
+	font-size:14pt;
+	width:300px;
+}
+
+table.table-hero-stats td
+{
+	padding:10px;
+	background-color:#1a1100;
+}
+
+.fight-spell-cooldown-label
+{
+	z-index:5;
+	color:black;
+	position:absolute;
+	font-size:12pt;
+	margin-top:5px;
+	margin-left:3px;
+	text-align:center;
+}
+
+tr#switch-gear-in-combat-button:hover
+{
+	color:gold;
+}
+
+div.inner-hp-bar
+{
+	height:30px;
+	background: -webkit-linear-gradient(#ff3333, #b30000); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#ff3333, #b30000); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#ff3333, #b30000); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#ff3333, #b30000); /* Standard syntax */
+	float:left;
+	min-width:0%;
+	max-width:0%;
+	z-index:0;
+	position:relative;
+}
+
+div.inner-hp-bar-label
+{
+	position:absolute;
+	z-index:100;
+	text-align:center;
+	font-size:16pt;
+	color:white;
+	left:0;
+	min-width:100%;
+}
+
+div.inner-mana-bar
+{
+	height:30px;
+	background: -webkit-linear-gradient(#000099, #0000ff); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#000099, #0000ff); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#000099, #0000ff); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#000099, #0000ff); /* Standard syntax */
+	float:left;
+	min-width:0%;
+	max-width:0%;
+	z-index:0;
+	position:relative;
+}
+
+div.inner-mana-bar-label
+{
+	position:absolute;
+	z-index:100;
+	text-align:center;
+	font-size:16pt;
+	color:white;
+	left:0;
+	min-width:100%;
+}
+

@@ -1,0 +1,154 @@
+function openDialogue(idChosen, widthChosen, positionChosen)
+{
+		$("#" + idChosen).dialog({modal:true, width:"90%"});
+}
+
+function confirmDialogue(widthChosen, textChosen, btn1Text, btn2Text, cmd)
+{
+	document.getElementById("dialogue-confirm-text").innerHTML = textChosen;
+	document.getElementById("dialogue-confirm-yes").value = btn1Text;
+	
+	if(btn2Text.length == 0)
+		document.getElementById("dialogue-confirm-no").style.display = "none";
+	else
+		document.getElementById("dialogue-confirm-no").style.display = "";
+	
+	document.getElementById("dialogue-confirm-no").value = btn2Text;
+	document.getElementById("dialogue-confirm-cmd").value = cmd;
+	$("#dialogue-confirm").dialog({modal:true, width:widthChosen});
+}
+
+
+function confirmRecipeDialogue(craftingRecipeChosen)
+{
+	var itemName = craftingRecipeChosen.itemName;
+	var skill = craftingRecipeChosen.skill; //array
+	var skillLevel = craftingRecipeChosen.skillLevel; // array
+	var recipe = craftingRecipeChosen.recipe; //array
+	var recipeCost = craftingRecipeChosen.recipeCost; //array
+	var isMultiCraftOn = craftingRecipeChosen.isMultiCraft;
+	var itemNameDisplay = craftingRecipeChosen.itemNameDisplay;
+	var desc = craftingRecipeChosen.description;
+	
+	var htmlOutput = "";
+	htmlOutput += "<center><div class='main-button-lighter' style='border-radius: 0;'><h3>"+itemNameDisplay+"</h3><img src='images/"+itemName+".png' class='img-large' /> <br /><br /><b>"+desc+"</b><br /><br /></div></center>";
+	htmlOutput += "<div class='main-button' style='padding:10px; border-radius: 0px;'>";
+	//level needed label
+	var canCraft = true;
+	for(var i = 0; i < skill.length; i++)
+	{
+		var color = "red";
+		if(getLevel(window[skill[i] + "Xp"]) >= skillLevel[i])
+			color = "lime";
+		
+		//used to hide craft button
+		if(canCraft && color == "red") 
+			canCraft = false;
+		
+		htmlOutput += "<span class='wrap-text' style='color:"+color+"'><img src='images/"+skill[i]+"Skill.png' class='img-small' />";
+		htmlOutput += " Level " + skillLevel[i] + "</span>";
+		htmlOutput += "<span style='color:white;margin:0px 20px;'></span>";
+	}
+	
+	//level needed label
+	
+	for(var i = 0; i < recipe.length; i++)
+	{
+		htmlOutput += "<span class='wrap-text' style='color:"+color+"'><img src='images/"+recipe[i]+".png' class='img-small' />";
+		
+		var color = "red";
+		if(window[recipe[i]] >= recipeCost[i])
+			color = "lime";
+		
+		//used to hide craft button
+		if(canCraft && color == "red") 
+			canCraft = false;
+		
+		htmlOutput += "<span class='wrap-text' style='color:"+color+"'>" + recipeCost[i] + " "+ getItemName(recipe[i]) +"</span>";
+		htmlOutput += "<span style='color:white;margin:0px 20px;'></span>";
+	}
+	htmlOutput += "</div>";
+	htmlOutput += "<hr />";
+	htmlOutput += "<input type='button' style='background-color:rgb(42, 142, 142);' value='Craft' onclick='sendBytes(\"CRAFT="+itemName+"\")' />"
+	
+	document.getElementById("item-section-crafting-an-item").innerHTML = htmlOutput;
+	navigate('craftingAnItem');
+}
+
+
+function confirmedDialogue(dialogue, val)
+{
+	$(dialogue).closest('.ui-dialog-content').dialog('close');
+	
+	if(val.length > 0)
+	sendBytes(val);
+}
+
+
+function openSellDialogue(itemChosen)
+{
+	var price = getItemPrice(itemChosen);
+	document.getElementById("dialogue-sellItemChosen").value = itemChosen;
+	document.getElementById("dialogue-sellItemImage").src = "images/" + itemChosen + ".png";
+	document.getElementById("dialogue-itemCost").innerHTML = formatNumber(price);
+	openDialogue("dialogue-sellItem","90%")
+	setSellWidgetValues("SELL=" + itemChosen,window[itemChosen], window[itemChosen])
+}
+
+
+var sellMaxValue;
+var sellCommand;
+var sellAmount;
+//command --> SELL=stone
+//command --> SMELT=copper
+function setSellWidgetValues(command, currentValue, maxValue)
+{
+	sellAmount = currentValue;
+	sellCommand = command;
+	sellMaxValue = maxValue;
+	
+	var selector = "[data-item-sellAmount=0]";
+	var elementsFound = $(selector);
+	for(var j = 0; j < elementsFound.length; j++)
+	{
+		elementsFound[j].value = currentValue;
+	}
+}
+
+
+function setSellAmountWidget(textElement)
+{
+	console.log(textElement.value);
+	sellAmount = parseInt(textElement.value);
+}
+
+function sendWidgetSellToServer()
+{
+	sendBytes(sellCommand + "~" + sellAmount);
+}
+
+function setAmountToSellWidget(amount,maxAmount,isAdditive)
+{
+	if(isAdditive)
+	{
+		var val = parseInt(sellAmount);
+		val += amount;
+		if(val > maxAmount)
+			val = parseInt(sellAmount);
+		
+		sellAmount = val;
+	}
+	else
+	{
+		sellAmount = amount;
+	}
+	
+	var selector = "[data-item-sellAmount=0]";
+	var elementsFound = $(selector);
+	for(var j = 0; j < elementsFound.length; j++)
+	{
+		elementsFound[j].value = sellAmount;
+	}
+	
+}
+
