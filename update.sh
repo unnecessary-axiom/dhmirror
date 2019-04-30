@@ -2,7 +2,7 @@
 cd "$(dirname "$0")"
 
 # Get new pages
-wget --mirror --convert-links --adjust-extension --page-requisites --timestamping --exclude-directories images https://diamondhunt.co
+wget --mirror --convert-links --adjust-extension --page-requisites --timestamping --exclude-directories images,stats --reject 'stats*' https://diamondhunt.co
 # Images contains many images that we need which aren't present in the homepage preload
 wget --mirror --convert-links --adjust-extension --page-requisites --timestamping --no-parent --reject 'index.html*' https://diamondhunt.co/images/
 
