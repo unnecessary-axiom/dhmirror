@@ -17,6 +17,8 @@ sed -i 's/%3Fversion=[0-9]\+//' diamondhunt.co/*.html
 # fix CSS funny names
 sed -i 's/\.css\.html/.css/' diamondhunt.co/*.html
 sed -i 's/\.css\.css/.css/' diamondhunt.co/*.html
+# fix jquery links
+sed -i 's/\.js\.html/.js/' diamondhunt.co/*.html
 
 # remove players online count to avoid constant updates
 sed -i -r 's/(Players Online.+) [0-9]+/\1/' diamondhunt.co/*.html
