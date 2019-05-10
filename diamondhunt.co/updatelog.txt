@@ -1,424 +1,944 @@
-May 5, 2017
+UPDATE LOG   |    NOTE:  YOU MIGHT HAVE TO REFRESH USING: CTRL + F5 TO CLEAR CACHE   |
+--------------------------------------------------------------------------------------
 
--update log moved to https://www.diamondhunt.co/updatelog.html
+May the 4th be with you
 
-May 2, 2017
+Reconnecting mechansime changed and automated.
+Changed the login system to be smoother if an account fails to connect.
 
--rocket finished
--reduced number of stardust logs needed for the witches potion from 500 to 200 (those who finished the quest already may get a refund by re-clicking on the quest)
--fixed XP bars under the skills section
--workers now display when they come back without the need of clicking on them
 
-May 1, 2017
+May 3, 2019 (part 2)
 
--the market will no longer let you post the same item twice at the same time
--the cooldown for posting and removing an item has now 3 different timers instead of 1 global one
--whale and rainbowfish coded
--new craftable (50% done, can be crafted and bound but not usable yet - it will be ready next patch tomorow)
+Major lava buff drop on all volcano monsters.
+Fixed the display bug where the looting ring for castle was not showing.
+Buffed mining looting crate from the mineral necklace.
+2 New craftables.
+Buffed lava plant to generate 30% more lava.
 
-April 30, 2017
 
--using stardust logs into the charcoal foundry will now give you stardust like the oven
--fixed pm's with people who have spaces.  Replace all spaces in a username with an underscore '_'
--added more market slots
--raised the crafting level required for the one small favour quest as it requires a large vial to complete
--fixed max level icons for chat
+May 3, 2019
 
-April 28, 2017
+Added/Buffed promethium and titanium ore drops from the dungeon enterance, and dungeon.
+New exploring area.
+New monsters released with new area.
+New equipement, both from new monsters and exploring.
+New craftable - machinery.
+Shiny mobs now give 1 shiny loot bag.  Note that those with green exploring orbs will only get 1 shiny loot bag and the rest will be regular ones (unless you hit the 2% chance on those).
+Fixed a bug where people were able to fill lava buckets by doing combat.
+Reduced oil used from lava plant to 300/s.
+Slighty reduced the cost of the mineral necklace. 
+New hp emblem, check hints
 
--added pirates and stardust crystal potion to the stats page
--visit the shop owner for a chat, if you have a decent level he might have something for you
--went over and fixed most bug submissions.  Thanks for the help guys! (Those who submit legit bugs)
--you may now click players on the hiscores (in game) to see the player stats
+May 2, 2019
 
-April 27, 2017
+The new tree has been added to the axe.
+Fixed the gold logs not working with the charcoal foundry.
+Hardcore accounts my now convert to normal accounts.
+Buffed the blood diamond axe to give 7x the logs instead of 6x. (Diamond is 5x)
+Opening exploring loot with an artifact potion active is now displayed in the loot dialogue.
+Fixed a bug with the gold logs not giving the right amount of coins when burnt in oven.
+Rocket boosters are now much faster when going to mars.
+New community center #10.
+New craftable.
+Ancient ore may now be smelted using plasma - more sources for collecting ancient ores coming.
+New magic emblem.
 
--stats page on hiscores
 
-April 24, 2017
+April 30, 2019 (part 2)
 
--new quest
--new craftable @ level 60
--fixed a bug while making potions where it would use the wrong vials
+Reduced the daily mission where you need to smelt 10k gold to 2.5k instead.
+Actually rebuffed the root potion.
+Fixed a bug where trading any ring with it equipped caused your account to keep the effect without owning it.
+New tree with its respective seed.
+The search a player page/profile look up has been updated.
+New HP emblem.
 
-April 24, 2017
 
--read/answered and fixed most bug submissions
--vials of water are now seperated into 3 tiers, making sand a much needed source as it was intended
--4 new potions
--those who had something growing in patch 5 and 6 will now be able to harvest even if the donation has expired.
--chopping down maple trees grown in a farming patch will also give maple syrup given you have the tap
--DONE MY EXAMS, expect a lot of updates in the coming days/weeks
+April 30, 2019
 
-April 18
+Rebuffed Root Potion - Some of you guys borught good points on why the nerf of the root potion was a bad idea.  I decided to follow your suggestion and reverted the nerf.
+There is now a shortcut to drink a reset combat potion next to the FIGHT button, given you have at least one potion.
+The red desert gaurdian in the desert now charges at a random interval of 1/20 intead of 1/15.
+The fire spell scroll has now a drop rate of 1/2 instead of 1/3.
+Your hero now has a graphic when holding a weapon in combat or in exploring tab, armour graphics will come eventually.
 
--added spells to magic page 2
--spells cooldown are now on a tooltip
--skeleton amulet now works on ice bones
--players may now click the bones directly to add to bonemeal bin
--fixed a bug where magic xp would not update the tooltip (on the "xp-left" label), note that players still earned the xp
--buffed conoe's drop rate on shrimp, sardine, tuna
--boats & canoe's have a chance of finding maps (canoe has better odds)
--getting a treasure map from a loot bag now shows '1' instead of the map id.
--essence potion drop rates: 1 in 16000 - (miningLevel * 150) capped at 1/1000
--super essence potion drop rates: 1 in 8000 - (miningLevel * 75) capped at 1/500
--items each now have a pre-configured price limit to be used only if no one is selling that item, this helps prevent alt trading while allowing different items to have different maximum price limits
--price limits of blue orbs, and bow have been increased
--magic page 2 now has spells
 
-April 15
+April 28, 2019
 
--forgot to mention easter event will be over on monday
--new chat command: /clear to clear chat box
--crysal leaf seeds timers fixed
--striped and normal crystal leaf seeds drop rate has been decreased as they give a lot of xp
--players can now upgrade wands
--new tradables
--northern fields loot bags openable
--you may now make arrows with feathers by clicking on them
--buffed the drop rates of fire feathers from the volcano
+Banana trees can now be upgraded with the potion.
+Tree root potions has been nerfed.
+Ability to select what trees your lumberjacks can ignore via the axe.
+New tradables: gold, promethium and dark mage sets, promethium moulds, the new potions.
+New arrow type: poison.  Dropped from scorpion and poison tribe and is also tradable.
+Bone drops added to tribesman, gorilla and elephant.
+Community center 9 released.
+New types of fish for higher levels.
+The map dropped from the boss from the coffin now shows the next area - however it is not coded yet.  Currently working on making it explorable/fightable.
+Casting a spell in combat that affects the enemy (poison, reflect etc) will no longer shift the whole screen down by around 1 cm.
+For those who have killed the skeleton boss and got 'dungeon coffin loot bags' - They were never suppose to be in the game and will always contain 0 loot.  However I won't be removing them from your account because it's a nice little untrabable unique.  If you DO want it removed, contact me.
 
-April 13, 2017
 
--new quest
--expanded magic (I know there are no new spells, but they are coming and will actually be useful)
--market limits will no longer be influenced on expired items
--easter event (not sigil)
 
-April 08, 2017
+April 26, 2019 (part 2)
 
--new craftable
--new quest
--replied/verfied & fixed most of the bug submissions
--I'm currently in the middle of exams,  I'll do my best to keep updating (exams end April 20th, expect almost daily updates afterwards)
+Shiny fruit trees now give double fruit, which stacks with the machete.
+Fixed a bug where examaning areas showed that the player had the looting ring when they didn't. (Display bug)
+Fixed the rocket showing 2.5 million oil instead of 4 million to send (display bug)
+New mining perk.
 
-April 05, 2017
 
--Apologies for lack of content updates.  I just finished the bug submittion form system and I am going to go through the list fixing all the bugs I can find before continuing to add more content.
+April 26, 2019
 
-April 04, 2017
+Casting a spell/poison/freeze potion now has a timer on top of the monster.
+The desert lizard may no longer evade if frozen/paralyzed.
+New exploring & woodcutting research perk.
+Two new potions.
+New fruit tree and its respective seed.
+Dungeon coffin is..explorable?
+New armour.
 
--market now sorts by price then by timeleft
--added a bug submition form  next to players online
 
+April 25, 2019
 
-April 03, 2017
+Spikey mace, super compost potion and ancient ore is now tradable.
+New craftable.
+New lava source.
+Changed the last brewing research perk, appologies for this change.  The old one was redundent.
+New missions.
 
--new combat area
--bear fur can be crafted into armour
--added blue rake orb to the market
--Those who purchased pirates before the price changes have been refunded next patch
 
--March 30, 2017
+420
 
--changed the prices of the later pirates. (25m, 30m, 35m, 40m, 45m, 50m, 60m 70m,85m,100m)
--changed the way the gem works in your axe in terms of the logs you get.  (Buff)
--your woodcutting axe now works when farming trees
--you may no longer use heal out of combat. (This was inteded because before release as your hero didn't replenish his hp after combat but was tested to be too harsh and scrapped)
--strange leafs tradable
--The next area is nearly done.  I wanted to release it in this batch but I ran out of time.  It should be released in the next patch.
+So, there was this long running bug where the ocean was unlocked w/o finding a map.  This has been fixed which is why some of you have the ocean locked again. (The map was never found in the first place)
+I will be away for easter and will be back on tuesday for more updates.
+Fixed a bug where dungeon keys were getting used when not exploring the dungeon.
+Added a ridiculously rare drop from all chests: gold armour pieces.  This armour is not intended to be obtained and has average stats. (Same as elephant) and is just for fun.  The drop rate is 1/3000 in any pirate's chest and 1/20,000 from the daily chest.
+*Please be careful with your account passwords and sharing accounts.  I've gotten quite a few messages about players losing high level accounts due to a scam. I don't have any problems with people sharring accounts, I just cannot be responsible if your partner turns on you.
+Starting the planter while things are already fully grown will not count towards the planter being used.
+Finding the bear in caves the first time (To unlock the knights quest for combat) is now a 100% chance instead of 50%.
+New craftable
+New brewing research perk.
 
-March 29, 2017
 
--buffed skeleton bone drops (5 - 15)
--fixed a bug where items would disappear on the crafting list even though that person could still benefit by crafting more.
--fixed progress bars in skills tab
--oil factory workers cost has been reduced from 1 million coins to 100k coins.  Players who hired a worker before this buff will be refunded when clicking on the factory.
--buffed promethium mining rate. (1/(25000 - (excavatorsOn * 2000))
--fixed market notification
--new woodcutting tree with seed drop (farmable too)
--maple tree seeds farmable
--new tradables
+April 18, 2019
 
-March 27, 2017
+Dungeon explorable.
+Dungeon monsters ready to fight.
+New weapon.
+New "armour".
+New exploring research perk.
 
--crafting items in the table will not be hidden if the person has crafted it before (toggable)
--fixed teleport cooldown in magic
--fixed a map that was not solvable
--added bars & promethium to the player market
 
-March 25, 2017
+April 17, 2019
 
--new craftables
--added red mushroom seeds, blewits, and snapegrass seeds to the offline tracker
--in the 'choose area to fight dialogue', black icons means you've never killed that enemy, green means you've killed it at least once, gold more than 50, blue more than 300
--changed the way the chisel works, the gem inside it will only affect the amount of bonus gem tips you get.  A blue chisel orb now gives a flat 20% boost when opening stardust crystals.
--players now have a rare chance of getting strange leafs while chopping down trees
+Striped leaf seed category - very high level and extremely rare seeds and cannot be obtained from the rake.
+Fixed the titanium bars sell price to show the right amount of coins. (20m)
+Ability to reset the planter back to 0.
+Fixed preset button in combat switching to wrong preset
+Reworked combat interface, things should fit better on screens now, especially if using a smaller mobile device.
 
-March 24, 2017
 
--players may now change their passwords in profile & settings
--fixed a bug where refreshing would remove hardcore chat icon
--essence now sellable on market
--heat orb enabled
--chisel sellable and obtainable through loot bags and chests
--stardust crystals obtainable - opened with a chisel
+April 16, 2019 (part 2)
 
-March 23, 2017
+The autogrow popup has been replaced with a scroll message.
+Hardcore accounts may now be created.  Here are the limitations:
+*Cannot trade with other players.
+*Cannot use the time machine.
+*Cannot use the wells minigame.
+*Cannot buy gems, enriched potions or empty orbs from the blood crystal shop.
+*Seperate hiscores/leaderboards.
 
--volcano loot bags openable
--oil pipe deleteable (right click it)
--fixed hiscores
--new tradable
--the market notification has been removed - it will be fixed and re implemented next patch
+April 16, 2019
 
-March 22, 2017
+Finally back home and can get some work done, the updates will be more frequent as of today.
+Ability to go to the geodes necklace by clicking any mineral.
+New crafting research perk.
+New mining research perk.
+New medium crafting item.
+New notifications for machinery being idle which can be toggled from the profile.
+Nerfed BC from geodes due to enriched geode potion recycled forever with new mining perk.
+HC released later today - https://i.imgur.com/SlRmQNq.png
 
--fixed market
--fixed evil snake loot bag
--fixed brewing requirement for the quest one small favour
--fixed a bug where images were not displaying when showing what you obtained while offline
--you will soon be able to change your password in profile & settings
+April 11, 2019
 
-March 21, 2017
+Hardcore, trading post and alts - I'm going to make a vote on certain things for you guys to choose from.  I will let you know when it's ready.
+New craftables.
+New research perk for cooking.
+New research perk for woodcutting.
+Teleport spell now has a confirmation before casting in case of miss clicks.
+Fixed a bug where the rocket was not giving any xp.
+Fixed a bug where having 99 tar glitched the ocean loot bags.
+Fixed a bug with preset #3 not working in combat.
+Fixed teleport CD when upgraded.
+Fixed a display bug where said you could only loot one dungeon key.
 
--those who disabled the chat will no longer recieve packets that have to do with chatting
--new magic spell (uses magic page 1)
--on login, you may now see items you have obtained during your offline time
--major buff on high level foods in terms of energy / heat. 
--market notifcation will now be active if a player has coins to collect
--fixed a bug with treasure maps where it was unsolvable
 
-March 19, 2017
+April 9, 2019 (part 3)
 
--New area
--Market will get a rework in terms of the way the dynamic limits work.  It is still easy to manipulate prices (which multiple accounts have been banned already for doing so - please read the rules if you continue to play)
+New quest - triggered from sending your rocket to the moon 5 times.
+Fixed a but where only the squid was spawning in the ocean today.
+Fixed a bug where the magic emblem was not always showing in the BC shop.
 
 
-March 19, 2017
+April 9, 2019 (part 2)
 
--changed the furnace interface to let you know if you have the ores/oil to smelt
--brewing tab / cooks book will automatically update when making potions/food
--crushers, oil storage 2, 3 can now be destroyed with a right click
--players may now browse all the items at once.
+New farming research perk.
+New missions.
+The fight button will now be set to green/red depending if you can fight.
+You are now unable to fight boss fights when your explorer is currently out to an area.
+Added jungle, dungeon enterance and relevant monsters to hiscores.
 
-March 17, 2017
+April 9, 2019
 
--all except 1 orb is working/bindable
--chisel is 50% done
--orbs tradable
--I realize some items stay stuck in market and are not purchasable - this will be fixed
--PMs are still an issue for players with spaces in there name, I'm going to be reworking the chat soon and this will fix all these types of issues
+Monsters released for fighing in the dungeon enterance.
+New blue emblems that allow you to upgrade spells.
+Puzzle chest 2.
+The daily task to explore the dungeon enterance can no longer be obtained if the boss hasn't been killed.
+Like the berserker amulet, the berserker ring is now socketable.
+Donor chat discontinued as most people use the discord for chatting and splitting the community in two is probably a bad idea.
 
-March 16, 2017
+April 5, 2019
 
--Game rules have been updated, read them.
--I was going to add a one time  market fee of 1 million coins in order to use it, however with feedback from players on reddit and in game I decided to make it so you must have a global level of 30 to use it.
--Your global level number will now update correctly and your total xp can be viewed if you hover your mouse over it
--chests openable - note that blue orbs are much rarer then they were on DH1
--blue orbs 50% coded, obtainable but not bindable yet.  Couldn't finish it today as we had network issues and I had to deal with that
--fixed the observatory quest
--hardcore accounts may now convert to a normal account in profile & settings
--increased the max lenght of characters in chat
--you may now pm people with spaces in there names by using '+': for example, the user "seal crystal" would be /pm seal+crystal [msg]
+New boss fight, sorry those who explored the dungeon entrance
+Fixed a bug where ticks were not continueing when offline.
 
-March 15, 2017
 
--new quest
--fixed snakeskin & batskin on market
--upper limit for skeleton sword/shield/amulet has been raised
+April 4, 2019
 
-March 14, 2017
+Improved (hopefully) the interface of the blood crystal shop.
+Significant changes to blood crystal shop, such as new items and different perm buffs.
+The enriched potions must now be unlocked before purchase.  Check the shop to see that needs to be done.
+The +25% XP boost is now forever - those who have purchased this before and is still active now have it forever.
+The 12 hour offline time now lasts forever - those who have purchased this before and is still active now have it forever.
+Removed blood crystals from mining tab.
+Fixed green orbs having wrong descriptions.
 
--tons more tradables
--dieing or refreshing during combat no longer gives you double cooldown.
--farming speed potions ingredients have been lowered significantly
--hiscores now sort by level, then by xp
--players can now unequip items by right clicking on their hero
 
-March 13, 2017 (part 2)
+April 2, 2019 (Part 2)
 
--market: added new tradables
--market: You may not remove an item from the market for 10min after posting it
--3 new potions
+It's that time again, official hardcore accounts are going to be available this week, most likely tomorrow or the day after.  For those who don't know, hardcore accounts are accounts that are not allowed to use the trading post and have their own seperate leaderboards.
 
+Changed the new amulet name from stone amulet to berserker amulet, because it gives attack bonuses.
+Lava tree seeds tradable.
+Tree root potion now scales with the type of gem in shovel.  This is  BUFF for BD, NO CHANGE for diamond, and NERF for ruby and lower.
+Ability to toggle on and off what loot dialogues you wish to hide in your profile options.
+New cooking research perk.
+Enriched potion timers in blood crystal shop now display how long they last.
+New players now need a minimum global level of 30 to be in the hiscores.
 
-March 13, 2017
+April 2, 2019
 
--fixed a few tooltips that had the wrong info
--market: a few more tradables (more to be added soon), added a search, made the price limit range more flexible
+Added a new shop item in a pine community center.
+New rare amulet which is obtained through the content mentioned above.
+Fixed the knights quest (2) where it wasn't completeable.
+Jungle shield, bananas and nopal tradable.
 
-March 12, 2017
 
--changed the way market limits are handled.  I'm going to try to go for a dynamic approach.  If this seems to work, we will stick with this system.  Keep in mind the market limits are there strictly to make alt trading more difficult.
--improved optimization of the market queries.  You should lag a lot less.
--only the top 10 items are shown
+March 29, 2019
 
-March 12, 2017
+Dungeon entrance coded for exploring.
+I'm not able to reproduce the 'item not tradable bug', however I changed the way the array is loaded, hopefully it fixes the issue.
+It is now impossible to sell an item to the NPC shop while being in a trade.  I realized a recurring issue where players accidentally sold to the npc shop during a trading session.
+Fixed a bug that showed the total amount of sharks caught instead of the numbers of sharks killed in the fighting log.
+Added new super rare loot in jungle exploring.  Don't worry, the poison spear will also be dropped in later areas.
+Casting spells or drinking potions in combat has an better feedback time. (It triggers faster on click)
+New Armour.
+The enriched pirate's potion now also pauses if a green map is found.
 
--second batch of patches for the market has been released
--fixed the bug with one map that was unsolvable
+March 27, 2019 (part 2)
 
-March 11, 2017
+Fixed a bug that removed combat cooldown, thank you agrodon for letting me know right away.
+New enriched potion.
 
--market testing phase released - only stone tradable for now until all bugs are fixed
--market is about 80% in terms of looks and more trading slots.  (1 slot now, 3 slots in future)
--don't alt trade as it is against the rules and you will be banned.
 
-March 11, 2017
+March 27, 2019
 
--I'm aware of a few display glitches, hopefully this patch will solve the issue ("negative timers/rollbacks") Note: The rollbacks are not actually roll backs, simply a display glitch
--Been working on market all day. It will be released in the next update
+Monsters with drops added in ocean.
+New Craftable.
+Green treasure maps + chests + orb.
+New Potion.
+New HP emblem available, remember to use the hints by clicking on your emblem in the equipment tab.
 
 
-March 10, 2017
+March 26, 2019 (part 2)
 
--engine changes.  Your game will now use MUCH less resources for your pc.
--added fishing bait drops to cave loots.
+For TURKEY: We now have an alternate payment method than paypal.
+Removed the 1$ purchase for 100 donor coins as the transaction flat fee left me with less than 25 cents.
+Added official donor chat found on https://diamondhunt.app/chat (Must have donated for now to use)
+Fixed rocket trips counter not showing up. (Counting as of now)
+Fixed display bugs with trading not popping up.
+Fixed combat monsters stuck on 0 hp.
 
-March 10, 2017
 
--reworked the backend login system
--market is 50% completed
--official rules are out:  www.diamondhunt.co/rules.php
+March 26, 2019
 
-March 09, 2017
+Fertilizer potion tradable.
+Lava drop from shiny trees is now trippled.
+Fixed a bug where clicking on any tree why having one shiny tree showed all trees as shiny. (Display bug)
+Added a way to detect whether the game is in focus or not, if it is not, the socket sleeps and bytes are no longer transfered, which  significantly reduces data usage.
+New shop item.
+New craftable.
 
--timers over woodcutting trees
--essence potion buff, your mining level will affect the drop rate (at level 1 mining: 1/12k, capped level 70 mining, 1/1k)
--slight buff on super stardust potion
--fixed bearfur not showing up (display bug)
--fixed pickaxe where stone would not convert to xp
--new oil resource
--lowered and fixed giant drills mining requirement
--market is about 20% done, it's quite a big update so I don't want to rush, I wan't it to be bug free on release. 
 
-Match 07, 2017
+March 25, 2019
 
--fixed delayed ticks when reaching 1.8k + players online
--new ore available
--upgrading your pickaxe will allow you to convert better ore in more mining xp
--new machinery
+Added swordfish to the ocean loot bags.
+Just realized that buying the extra drills tips, crushers containers and giant drill heads also doubled the machinery XP which was not indended.  This has been fixed.
+Fixed orb images (display issue only)
+Fixed a bug where the jungle tree could not be upgraded to the lava tree.
+All logs tradable.
+Fixed a bug where the time did not add up correctly with the new geode and the necklace.
+Fixed a bug where on occasion, recieving blood crystals from another player caused your 'tradable BC' to be used.
+Pirates potion is now tradable.
+Fixed a bug where small amount of people were unable to trade.
 
-Match 06, 2017
 
--fixed the farming bug with grass seeds.
--props to Ted the Farmer for finding a farming xp exploit and reporting it (issue has been fixed)
+March 23, 2019
 
+New mining machinery with its respective geodes.
+Enriched geode potion added to blood crystal shop.
+Community center 8.
+titantium smelting.
+Ability to collect and resend your train/boats in one click.
+Fxied oil need for rocket, it was suppose to be 4m.
 
-March 05, 2017
 
--two new npcs in caves released + loot bags
--fixed chests from treasure maps from dissapearing (display glitch, those who had some will see them appear)
--fixed bear fur
--added new craftable items which uses bones
--new potion
+March 22, 2019
 
+After some thought, I have decided to keep the enriched potions untradable.
+Craftable: Titanium oil well released.
+Craftable: Rocket released.
 
-March 05, 2017
 
--new tree
--new combat area with npc loot bags + new equipement
--combat drop tables: www.diamondhunt.co/wiki/combat.php
--color coded quests to show difficulty
--fixed wc patches for donors
--tweaked once again combat formula, in the players favour
--essence potion fixed
+March 20, 2019
 
-March 02, 2017 (part 2)
+Ability to refer a friend for free blood crystals - please refrain from using alts, the goal is to increase the player base.
+New potion.
+New craftable.
 
--super stardust potion added
--furnace now has an indicator whether you have the materials or not
--fishing bait now dropped from the forest monsters
--treasure maps added (obtained from pirates OR from any monster loot which is extremely rare.  The rarity is based on the monster's levels)
--fixed a bug where a server message would say you found a diamond when you simply socketed it to an item
--buffed monster loot (The ent)
--you may now turn on more notifications in profile & settings
 
-March 2, 2017
+March 19, 2019
 
--removed quest restriction
--changed combat forumla
--content update to be released in 2h from now (see March 2, 2017 part 2)
+Ability to fight a gem goblin in any area, they are very rare to encounter.  The chance of encountering one increases as you fight in a higher level areas.
+You may now drink multiple potions by clicking the 'drink max' button. This will drink the most amount of potions without wasting XP or time, based on your research perks.
+There is now a label under the quest button if some are in progress.
+Well changes:  There is now a maximum amount per user that changes between rounds.  The range is from 1mil coins/ 50 BC up to 1 tril/ 5000 BC.
+Ability to see all hp emblem hints in equipment tab.
 
-March 1, 2017
+March 17, 2019
 
--fixed bar potion
--fixed a bug with the snake quest where your combat would make you lose xp
+Ability to open multiple geodes at the same time.
+Ability to eat all food, sell all statues or convert all artifacts to exploring xp at the same time.
+New crafting research perk.
+Geodes mining XP rates lowered as they will also now grant the same crafting XP when used with new research perk.
+Minerals found in geodes finally have a use.
+Examining unidentified minerals from geodes is done all at once if the stack is greater than 1.
 
 
-February 27, 2017
 
--fixed level up message when cooking
--fixed the xp stuck on bottom left corner
--fixed images in the cook's book
--bar potion fixed
--added oilstorage 4
--combat equipement dropped from npcs
--second tier of loot bags coded + 3rd area of npcs out
+March 14, 2019
 
-February 26, 2017
+The volcano mage heals a little less often.
+The enriched pirate potion will pause if a map is found.
+Fixed a bug where fining a map with the pirate's potion or the enriched version not triggering the new brewing potion.
 
--anti spam + ip banned added 
--sand added to rats drop table
--willow logs will heat furnaces correctly now
--xp difference tooltip changed to xp left and will update accordingly
--essences can be looted from any monster loot bag but is very rare
--hiscores page now shows top 500 players
--new quest
 
-February 25, 2017
+March 13, 2019
 
--added an 'xp difference' on xp tooltips + fixed tooltips bug where it wouldn't update on level ups + fixed level up icons
--new potion
--magic page reduced from 100m to 1m
--more food types (after completion of the cooks assistant quest)
+The pirate potion in the blood crystal shop now triggers the next level potion and the mission.
+New tree  with tree seed released.
+Added jungle logs drop to jungle exploring area.
+New quest, it triggers once you have killed at least one lava snake and own a diamond.
+Added an item to shop.
 
-February 25, 2017
 
--hopefully fixed a problem with rollbacks. If you still manage to get rolled back, let me know.  I'm treating rollbacks as a #1 priority.
--players can now mute people with /mute [player-name]
--4 new npcs to fight
--admins (mods not yet, soon) can globablly mute someone
--added new potions
--crafting oil storage #3 fixed
--once we have content up to level 50 in every skill (bug free) the game will go from alpha to beta.  There will be NO account resets.
--BALANCE: buffed cooking xp for low level fishes as gaining early levels in cooking was a little too harsh
+Marhc 12, 2019 (part 2)
 
-February 24, 2017 (part 2)
+Ice arrows now work in the desert.
+Teleport cooldown timer has been added under explorer.
+After teleporting out of a fight, all magic spell cooldowns are reset (except teleport)
+Added dotted green, green and lime seed drops to volcano loot bags.
+Added gold leaf seeds and leaf to northern fields.
+Fixed a bug where fruits were not properly being harvested.
+Buffed seed finder potion to from 10% more seeds to double.
+Added special enriched potions in blood crystal shop.
+Lizard gear tradable.
 
--crushers fixed
--adding a new quest
--forest npc thief now gives xp
--ability to display on/off the chat in profiles and settings
 
-February 24, 2017
+March 12, 2019
 
--apologies for the downtime.  Ofc the game went down 15 min after I went to sleep.  It was a problem on the hosting side and the issue has been resolved.
--fixed crushers + new mineral
--Balancing changes: reduced xp earned from fish slighty + sapphires more common now. (1/250k --> 1/150k)
--profile and settings 10% done
--right clicking stone, copper, tin and silver will automatically sell your whole pile (can be toggled OFF in profile & settings)
+Wells timer set to 12h.
+Jungle exploring released.
+New tool released.
+Fixed a bug where the 5x log for farming trees did not always trigger.
+Balanced fruit trees to give more fruit consistently. (Ex: bananas were 50 - 250, now it's 100 - 200)
+Monsters in desert released with unique loot, including a puzzle chest.
+Accuracy now displayed in exploring tab under explorer.
+New armour.
+New Spell.
 
-February 23, 2017 (part two)
 
--improved the item loader, the game should have less hiccups (where things would freeze up for a fraction of a second on every tick)
--adding crafting to the tabs (next to mining)
--legendary blood diamond released
--wheat seeds have been made slighty less common to find
--fixed consuming honey
+March 11, 2019
 
+Finally finished with the blood crystal well.  For now rounds for both wells are 3 hours.
 
-February 23, 2017
+March 9, 2019 (part 3)
 
--so every 4 - 6 hours the server seems to freeze.  I'm currently investigating this.  If anyone knows how to trigger it let me know!
--you may now delete unbound furnaces by right clicking them
--donor timers were never set to go down, now they do
--fixed donor woodcutting patches
--fixed binding oil storage 1 over the second tier.
--new chat icon (quest icon for those who managed to complete all the quests. (note: a lot more quests to come)
+Well re-enabled.
+Well rounds reduced to 30 minutes for testing.
 
-February 22, 2017
 
--brewing potion now uses your vials of water
--converting bars with hammer and ores with pickaxe fixed
--Hitting the TAB button should auto-complete to the last person that you private messaged. (using /pm)
--I want to appologies for the unstable release of DH2.  For about 2h we had a lot of disconnections.  This has been fixed. (Thanks farfar and vivafnatic for the help)
+March 9, 2019 (part 2)
 
-February 22, 2017
+Currently working on the gold well, added tools to monitor problems with showing last winner on server two.
+Fixed a bug where arrows, fire arrows, and ice arrows were not working in the chest drop table.
+The well has been disabled for the time being. 
+The well rounds are now 1h instead of 3h for the time being as new tools are being deployed.
 
--release of DH2
+March 9, 2019
 
-December 17, 2016
+Added scythe and ghost amulet and rings tradable.
 
--main engine completed
+
+March 8, 2019
+
+Added a shortcut to your profile stats by clicking next to username found in the popup by clicking the ... button.
+Fixed auto login screen.
+Buffed chest drops.
+Added blood crystals to treasure chest drop table.
+Buffed ruby/diamond keys for chests, ruby now gives 5 rolls and diamond 7,  Please note that if the same item is rolled twice, it will be combined in the same slot.
+The timeout time for the server increased, this should make less stable internet connecitons not get kicked out of the game if a few packets are lost.
+Fixed ghost scan potion not working with the free potion perk.
+New craftable
+
+March 7, 2019
+
+Fixed the issue of not being able to trigger the drink 2 potions in one fight brewing task.
+Ghost potion is now tradable.
+New research brewing perk.
+
+
+March 5, 2019
+
+Haunted mansion monsters out.
+New exploring research perk out.
+Rings are now a thing.
+
+
+March 4, 2019
+
+Well timers are more accurate.
+Reduced price for very high wind orb from 500 to 250.
+Ability to trade purchased blood crystals as of today.
+New spell.
+New community center.
+Buying the hp emblem from the blood crystal shop is automatically used on purchase.
+
+March 1, 2019
+
+Fixed a bug where leaving a boss fight, such as the desert one, would make it impossible to go back to the fight screen.
+Ocean bags have been added to the hiscores stats page.
+Fixed a bug with the ignore defence potion where it could only be used once, even after a fight was finished.
+New Missions.
+Slight buff on exploring XP from fields and forest.
+It is now possible to collect your prize from the well from any server
+Removed CAP for drinking artifact potions.
+
+March 1,  2019
+
+Wells now available on both servers.
+Wells cap increased from 100m to 500m.
+
+
+February 28, 2019
+
+Added new quest with unique reward.
+Ability to enter prize pools with other players - see quest reward above for more information.
+Sailboat locked behind crafting research perk.
+Fixed crafting requirement bug for Diamond Key & Sailboat.
+TODO: leaving a boss fight will allow you to reenter
+
+February 26, 2019
+
+Blood shop now sells ONE hp emblem. (Only one and forever one)
+Sail boat craftable with wind mechanic.
+Ability to buy from blood shop a very high wind magical power which changes the wind for everyone on the server for 5 minutes.
+Fixed lava perk not working for some people.
+The message 'attempting to reconnect...' no longer does it automatically, a button named 'Reconnect' allows you to trigger the reload.
+Fixed ocean loot bag giving desert artifacts
+New potions 
+
+February 24, 2019
+
+New exploring research perk.
+You may now see how many logs you own when selecting a type of log from the oven's interface.
+Adding promethium in your oven will now consider lava as a resource which will correct the default value.
+Artifact potion now gives XP when used.
+Crafting items now has descriptions.
+Added little tutorial dialogue boxes, everyone will be getting them even if you are far in the game.  Simply disable it when you get the popup.
+Fixed stat labels for weapons and armour.
+Equipment items for explorer no longer require an exploring level to wield.  It's hard enough getting the items in the first place.
+Reduced boat cooldown times.
+
+
+February 23, 2019 (PART 2)
+
+Fixed display bug where the wrong energy was shown for each area.
+Reduced exploring time for most areas.
+Fixed combat image when hitting an enemy.
+Arrows now have an accuracy stat.
+Ability to buy a exploring area map if a player is unable to find one. (1/15)
+Viewing total trees chopped via the axe no longer shows fruit trees if the reasearch isn't done. (And fixed the images to represent the right tree)
+
+
+February 23, 2019
+
+Fish bones is now increased based on the fish you eat.
+UI: Ability to craft multiple iron buckets at the same time.
+Tick rate has been fixed, timers should trigger accordingly.
+More missions released, sorry some of them are not retroactive.
+Reduced energy cost from most areas. (because of EQUIPEMENT CHANGES #1)
+
+COMBAT REWORK: 
+All items have been unequiped for the new combat rework.
+You now have the ability to see if you succesfully tanked an attack.
+
+EQUIPMENT CHANGES #1:
+Unfortunately removed the mechanics where armour/weapons reduced cooldown/energy cost for exploring.  This is because I want to release strong weapons in the future with very high attack/defence bonuses which would eventually give 80% reductions, which is just too OP.  This mechanic was added when I thought that I wasn't implementing combat.  Also, this opens up to more special items (amulets, potions etc) for cooldown bonuses.
+
+EQUIPMENT CHANGES #2:
+Accuracy stat has now been added to equipements.
+
+
+February 21, 2019 (part 2)
+
+Notice: Currently aware that the tick rate is slower than usual (You'll notice timers last 1.3 seconds instead of 1 second with 100+ players on) --> currently deploying tools to investigate and find the problem.
+Fire mage spell scroll drop rate reduced from 1/15 to 1/5
+XP lamp drop from desert incrased from 1/20 to 1/30
+Volcano NPCs have now a 50% chance to drop 1 - 3 lava buckets aswell as an 5% chance to drop 5 - 20 lava buckets.
+New quest, must have killed all enemies in volcano to unlock.
+
+
+February 21, 2019
+
+Opening all loot bags at a time now shows the numbered opened in the title.
+Clicking your fishing rod without having researched farming level 3 will give you a hint to research farming until bait is unlocked.
+New craftable.
+Changed the time machine so you can add increments for 1, 10 or 100 blood crystals for shorter periods of time.
+
+
+February 19, 2019 (part 3)
+
+Ability to check the capacity increase amount without using blood crystals in the blood crystal shop.
+Changed the witches potion quest to require another item not found from the desert.
+Fixed a bug where going out of combat and trying to go back didn't let you.
+Added a in combat notification which can also be clicked on for quick access.
+You may only use the upgrade woodcutting potion once per patch.
+Woodcutting upgrade potion now works on fruit trees.
+Having 5 or more loot bags allows you to open them all at once.
+Using your farmer or the lumberjack now has a dialogue for you to see the XP and loot obtained.
+
+February 19, 2019 (part 2)
+
+Fixed a bug where all monsters were using a boss special attack.
+Fixed the normal compost potion not stacking correctly.
+
+
+February 19, 2019
+
+Note: As we are in beta, expect nerfs and buffs for a better balanced game.
+Looking for a fight quickly after starting exploring sometimes made your hero say you need to explore, this has been fixed.
+Improved delay when planting seeds manually.
+Improved delay when equiping armour.
+The game now detects if you lose connection, if so it will reload to reconnect with the game server.
+Compost potion stacks accordingly.
+Nerfed the mining xp from giant drills.
+A new 'boss fight' is encountered when trying to explore the desert.
+
+
+February 18, 2019 (part 2)
+
+Fixed a bug where the artifact potion not giving you the artifact but only the xp.
+Blood Crystals no longer tradable as they are too easy to aquire early in the game.
+If you have previously logged in, the login page now automatically brings you to the login form.
+Guest passwords are automatically stickied to the login form incase someone logs out without noting down their guest password.  Regular passwords for normal accounts are not stickied for security purposes.
+A trade notification has been added and serves as a shortcut during a trading session.
+New craftable.
+Time machine now uses blood crystals directly from the inventory.  Those who had blood crystals stored in their time machine can go and get a refund by clicking on the machine.
+New woodcutting research perk.
+Fruit trees released.
+Time machine is much cheaper to use now.
+Buffed snakeskin drop from forest and volcano.
+Feathers, arrows bow, all armour and artifact potion tradable.
+Armour can be crafted more than once.
+Armour no longer gives XP when crafted due to the potential XP abuse from trading the armour away and easily crafting it again.
+
+
+February 18, 2019
+
+Ability to craft arrows.
+Bow has been added.
+Northern field monsters added.
+New quest, you're* going to have to cast quite a few fire spells for this quest to trigger.
+New spell.
+Refined gold bars reduced from 10 to 5 for all display cases.
+New Potion.
+Still trying to think of an idea to get rid of excess minerals from geodes.
+All statues tradable.
+Blood Crystals Tradable.
+
+
+February 13, 2019
+
+Players my now sign up on their own (open beta)
+Fixed a bug where players who just unlocked a skill could not perform level 1 actions.
+Exploring desert released.
+New craftable.
+Potions now have descriptions.
+Shop items now have descriptions.
+
+February 12, 2019
+
+Improved backend tick algorithm to reduce CPU usage.  You should have faster login times, especially noticable when ticking for the 8h offline time.
+Fixed a few minor trading display bugs.
+Potions are now shown on top of the leaves and mushrooms for faster access.
+XP lamp buffed and now scales on level.
+Chests now drop 1 lamp instead of 1 - 5 due to the major buff above.
+New cooking research perk.
+Next missions available.
+
+
+February 8, 2019
+
+Qucik fixed the train so you don't need the oil to loot it.
+I'll be gone until monday, make sure to post your suggestions and bugs on reddit. Thanks!
+
+February 7, 2019 (part 2)
+
+Fixed the train so it uses the correct amount of oil.
+Fixed a bug where blood diamond fishing rod was not catching low level fishies.
+Fixed a bug where the mage would always heal for 5 in the volcano.
+Viewing the monster log now has a order based on the exploring area.
+Loot dialogues now have formatted numbers.
+Ice bones tradable.
+Buffed apple tree seeds yield by 150%.
+Thief now drops bones.  Fire Hawk and Fire mage now drops ashes.
+
+
+February 7, 2019
+
+Server ID label is now shown below your username in the logout dialogue box.
+Items that were looted from and NPC is now displayed on the item.
+Ability to fight npcs in volcano + loot coded for it.
+Ability to cast spells in combat.
+Fixed a few trading bugs.
+Ability to turn off trade requests using the trading post.
+New craftables.
+New crafting research perk.
+Chickens now drop feathers.
+
+
+February 5, 2019 (part 2)
+
+Added HP emblem to Haunted Mansion loot. (unique loot)
+Fixed a bug where players were getting whales and rainbow fishes without a blood diamond socketed in the fishing rod.
+Fixed a bug where trading equipment was impossible.
+Added new woodcutting perk.
+Added 3 HP potions to the shop to help kick off combat for lower level players.
+Reduced the mission to use fish bone from 100 to 50.
+Added 3 new sets of missions.
+New Woodcutting perk.
+
+February 5, 2019
+
+Fixed the display bug where potions were stuck at timer 1.
+Those who have a stuck timer on their furnaces may now reset it by clicking on the furnace.
+Trading post released in crafting.
+Ability to trade with other players, it's not perfect right now and stills needs a bit of polishing, however it's very functional.
+
+
+January 30, 2019
+
+Shortcut bar on the bottom has bee added.
+Every potion now has a label for its category.
+Fixed HP potion using the wrong ingredients.
+Bug fix - The combat potions may no longer be drank out of combat.
+Fixed some potion timers display showing crazy long decimal values.
+Blood diamond released.
+You may now see how many gems the gem finder has found by clicking on him, note that the blood crystals are only tracked as of this update.
+New mining perk.
+Added a new item in regular shop which requires community center 6.
+Ability to socket blood diamonds.
+New consumable donor item.
+Usernames automatically remembered on the login form if the session expires.
+New craftable.
+New quest.
+
+
+January 25, 2019 (part 3)
+
+Fixed exploring speed potion timer.
+3 New Potion.
+Combat potions released.
+Fixed skull artifact XP in haunted mansion.
+Skeleton shield/sword ready.
+Emblems released, the first one can be obtained from chests.
+
+
+January 25, 2019 (part 2)
+
+Server configurations are complete, unless we encounter problems downtime should be minimal.
+New Tree + its seed.
+Haunted mansion released.
+Buffed pirates slightly. Chance of map ranges between 1/1,000,000 to 1/200,000 from 1 pirate to 10 respectively.
+
+
+January 25, 2019
+
+Completely changed the infrastructure of server management.  This allows me to add or remove servers on the fly based on the demand of players.  You may now switch servers by clicking the change link under the login form.  By default, the server with the least amount of players is chosen.
+
+January 23, 2019 (part 2)
+
+Fixed hiscores.
+New farming research perk.
+Snakeskin craftable.
+New community center.
+Combat book - a log of all kills and loot statistics.
+New weapon : iron dagger from thief.
+More notifications: When a treasure map is found, when the researcher is done researching.  Let me know if I'm missing any.
+
+
+January 23, 2019
+
+Seed names are now shown above level requirement for all seeds.
+Fixed a bug where hiscore was showing incorrect global level.
+The default value for making potions is now set to 1.
+Using the time machine will no longer fast foward ticks for donor items, such as XP boost or extra time.
+When entering a number (ie. Selling an item, making potions, bars, converting artifacts etc), clicking the "half" more than once will continue to half the current value entered.
+Tiny, none-invasive text will be shown when you level up any skill.
+Chickens now drop raw chicken, rats drop cheese and bees drop honey and a new weapon.
+
+
+January 22, 2019
+
+Hiscores released as demanded from players.
+
+
+
+January 18, 2019
+
+Given that I would like to introduce combat earlier in the game, completing the knights quest will give the player access to combat.  The exploring research perk has been removed and will be replaced eventually.
+
+
+January 18, 2019
+
+New Craftable.
+Bug fix: Crafting a unique item should remove it from the crafting list right away.
+Fixed bait potion not giving bait.
+Added new perk for exploring, this opens up the game to combat! (only fields, forest and caves combat released)
+Note: Combat in forest and caves is going to require a ton of rng atm to win, currently working on more weapons and armour.  HP potions will also be a thing eventually.
+Finding a map from exploring loot bags for the next area reduced from 1/20 to 1/15
+
+
+January 17, 2019
+
+New quest. (Triggered if player has opened at least 30 loot bags from first 3 areas)
+
+
+January 15, 2019 (part 2)
+
+New missions.
+Reduced the number of woodcutting upgrade potion from 20 to 5 to unlock next potion.
+Unlocking the exploring skill now sets you to 100 energy.
+Bronze oven and fishing rod craft levels to make switched with each other.
+New research perk for cooking.
+Ability to auto-replant farming patchesw ith the farmer, bob.
+Promethium oil well released.
+
+
+January 15, 2019
+
+Bronze star farming potion now lasts for 1 minute.
+Fixed a bug where replacing an equiped item made you lost it.
+Fixed exploring bug where people had unlocked the next area without a map.
+Oven notification.
+Ice bones now work with bone amulet.
+When making potions, or other similar interfaces, clicking on the item icons will display their respective names.
+Potions are now ordered by type and have had their color changed to:
+
+*Grey: Mining/Crafting related potions
+*Dark green: Farming related Potions
+*Light Green: Woodcutting related Potions
+*Blue: Fishing related Potions
+*Orange: Exploring related Potions
+*Yellow: Cooking related Potions
+
+
+January 11, 2019
+
+-Exploring notificaiton if explore is ready to go.
+-Treasure chests openable with blue obs working.
+-Furnace speed potion buff: it is now applied after all other furnace speed perks.
+
+
+January 9, 2019
+
+-Fixed pine logs.
+-Added notifactions for when a woodcutting patch or farming patch has something fully grown, they can also be clicked on for quick access.
+-Added crafting of keys with chest.
+-Bear fur armour is now crafted by clicking on the bear fur directly.
+-When leveling up, clicking the back button will bring you back to the previous tab you were in instead of the main menu.
+-The exploring interface when selecting a location now has a quick back to save clicks.
+-Maps are solvable, chests will be openable next patch - today.
+
+
+January 7, 2019 (part 3)
+
+Reduced number of fish bones needed from 250 to 100 for missions.
+New potion.
+Crystal seeds released.
+Northern fields released.
+New Tree.
+
+
+January 7, 2019 (part 2)
+
+More mission sets (+3)
+Fixed fishbones not obtained from bronze star bonus fish.
+
+
+
+January 7, 2019
+
+-Added 2 new research perks for brewing.
+-Added 1 new research perk for mining.
+-Added 1 new research perk for exploring.
+-New item available with community center 5
+
+
+January 5, 2019
+
+-Added wiki link.
+-Community center 5 released.
+-Made dialogues scrollable.
+-Pirates part 1 - maps obtainable.
+
+
+
+January 4, 2019
+
+New animation when using time machine.
+All new dialogues released.
+Ability to close dialogues using the esc key.
+Ability to close dialogues by clicking outside of it.
+Fixed farming perk 5.
+
+
+
+January 3, 2019 (part 3)
+
+So dialogues are becoming a problem, they sometimes cause autoscrolling and as times don't show up in the middle of the screen
+forcing the user to scroll.  I have released a batch of new dialogue interfaces.  They should work in browser and mobile.
+
+Note that we are still in testing and it might cause problems, and only 33% of the dialogues have been changed for testing purposes.
+This might also require you to refresh your cache.
+
+Thanks guys,
+Smitty
+
+
+
+January 3, 2019 (part 2)
+
+-Two new farming research perks.
+-Volcano explorable.
+-New craftable.
+-Bone amulet released.
+-Kindle added to forest loot bag.
+
+January 3, 2019
+
+-I'm back after the holidays, updates are to be resumed.
+-Fixed geodes from giant drills.
+-Bear fur and armour released.
+-Fixed other bugs posted reddit.
+
+
+December 27, 2018
+
+-Potion timers for potions owned fixed.
+-Quick link from the gem finder when he finds a gem in the popup.
+-Went through bug list on reddit and fixed most of them.
+-New machinery along with its geodes.
+-New ore.
+-New tree with seed working.
+-New oven.
+
+December 26, 2018
+
+-New quest
+-Ability to equip items
+-Merry Christmas to you all! Currently going through the buglist at this moment
+
+
+December 24, 2018 (part 2)
+
+Research perk #3 for crafting released.
+Research perk #3 for woodcutting released.
+2 Sets of missions ready.
+Gold furnace craftable.
+Oil factory.
+Caves may now be explored.
+General bug fixes that you submitted on reddit.
+Exploring loot bag colors changed based on location.
+
+
+
+December 24, 2018
+
+-Ability to open geodes
+
+
+
+December 21, 2018 (part 4)
+
+-fixed fishing rod not catching anything.
+-farmer will no longer ask you to remove growing crops.
+
+December 21, 2018 (part 3)
+
+-Last capacity upgrade from blood crystal shop will give you unlimited capacity (actually, 2^64-1)
+-switching screens now resets the scrolling to top.
+-cooking research perk #2 and #3 released.
+
+
+December 21, 2018 (part 2)
+
+-lime leaves and gold leaves now sell for for the correct price
+-farmer and lumberjack can be hired with community center 3
+-thinking about adding a chat box which is off by default for mobile
+
+
+December 21, 2018
+
+-Research Perk #3 for exploring ready
+-Fixed text spilling out of interfaces for mobile
+-New quest tied with research Perk #4 for mining
+
+
+December 20, 2018 (part 2)
+
+-Added research perk #2 for crafting.
+-Fixed the fish found for the fishing rod.
+-Fixed item names which showed the wrong label.
+-Added lime and gold leaves to brewing tab
+
+December 20, 2018
+
+-added metal detector to find statues
+-fixed bug where buying a farming slot would be set to 0
+
+
+December 19, 2018
+
+-opened mobile in closed beta
