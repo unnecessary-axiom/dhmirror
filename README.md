@@ -2,4 +2,4 @@
 
 Custom mirror of https://diamondhunt.co front page
 
-[PLAY](diamondhunt.co/index.html)
+[PLAY](https://unnecessary-axiom.github.io/dhmirror/diamondhunt.co/index.html)
