@@ -296,7 +296,7 @@ table.tab-bar td:hover
 div.tab-container
 {
 	border:1px solid grey;
-	background-image:url('https://diamondhunt.co/images/backgrounds/background-inventory.jpg')
+	background-image:url('../images/backgrounds/background-inventory.jpg')
 }
 
 span.notif-box
@@ -1387,7 +1387,7 @@ span.lime-btn
 div.woodcutting-trees-area
 {
 	border:1px solid green;
-	background-image:url('https://diamondhunt.co/images/woodcutting/bg.png');
+	background-image:url('../images/woodcutting/bg.png');
 }
 
 div.woodcutting-tree

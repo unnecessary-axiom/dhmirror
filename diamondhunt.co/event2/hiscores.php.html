@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>504 Gateway Timeout</title>
+</head><body>
+<h1>Gateway Timeout</h1>
+<p>The gateway did not receive a timely response
+from the upstream server or application.</p>
+</body></html>
+HTTP/1.1 200 OK
+Date: Wed, 19 Jun 2019 19:13:56 GMT
+Server: Apache/2.4.34 (Fedora) OpenSSL/1.1.0i-fips
+X-Powered-By: PHP/7.1.23
+Keep-Alive: timeout=5, max=55
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+a1c
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<title>Diamond Hunt MMO</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+
+<link rel="stylesheet" type="text/css" href="css/styles.css" />
+
+<link rel="shortcut icon" href="img/diamondhunt.ico">
+<script>
+function showTable(idTable)
+{
+	document.getElementById('warning-msg').style.display = '';
+	hideAllTables();
+	document.getElementById(idTable).style.display = '';
+}
+
+function hideAllTables(idTable)
+{
+	document.getElementById('skill_global').style.display = 'none';
+	document.getElementById('skill_mining').style.display = 'none';
+	document.getElementById('skill_smithing').style.display = 'none';
+	document.getElementById('skill_woodcutting').style.display = 'none';
+	document.getElementById('skill_crafting').style.display = 'none';
+	document.getElementById('skill_fishing').style.display = 'none';
+	document.getElementById('skill_cooking').style.display = 'none';
+	document.getElementById('skill_brewing').style.display = 'none';
+	document.getElementById('skill_combat').style.display = 'none';
+}
+</script>
+<style>
+table
+{
+	width:50%;
+	padding:20px;
+	border:1px solid grey;
+}
+
+span.link-hi
+{
+	color:cyan;
+	cursor:pointer;
+}
+
+span.link-hi:hover
+{
+	color:red;
+}
+
+</style>
+</head>
+
+<body>
+<br />
+<div class="main-container-box">
+<center><h1>Hiscores</h1></center>
+<br />
+
+<!-- nav bar -->
+<center>
+<table width="100%">
+<tr>
+<td><span class="link-hi" onclick="showTable('skill_global')">Global</span></td>
+<td><span class="link-hi" onclick="showTable('skill_mining')">Mining</span></td>
+<td><span class="link-hi" onclick="showTable('skill_smithing')">Smithing</span></td>
+<td><span class="link-hi" onclick="showTable('skill_woodcutting')">Woodcutting</span></td>
+<td><span class="link-hi" onclick="showTable('skill_crafting')">Crafting</span></td>
+<td><span class="link-hi" onclick="showTable('skill_fishing')">Fishing</span></td>
+<td><span class="link-hi" onclick="showTable('skill_cooking')">Cooking</span></td>
+<td><span class="link-hi" onclick="showTable('skill_brewing')">Brewing</span></td>
+<td><span class="link-hi" onclick="showTable('skill_combat')">Combat</span></td>
+</tr>
+<tr>
+<td colspan='8' style='text-align:center;'><i id='warning-msg' style='font-size:10pt;display:none;'>If page does not load, wait 5 seconds and try again.</i></td>
+</tr>
+</table>
+
+We are doing maintenance, try again shortly.
+0
+

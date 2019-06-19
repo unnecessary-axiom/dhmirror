@@ -32,7 +32,7 @@
 
 .index-box
 {
-	background-image:url('https://diamondhunt.co/images/backgrounds/background.jpg');
+	background-image:url('../images/backgrounds/background.jpg');
 	display:inline-block;
 	text-align:center;
 	padding-bottom:20px;
@@ -170,7 +170,7 @@ div.old-links
 body
 {
 	font-family:"Lucida Grande","bitstream vera sans","trebuchet ms","sans-serif","verdana";
-	background-image:url('https://diamondhunt.co/images/backgrounds/background2.jpg');
+	background-image:url('../images/backgrounds/background2.jpg');
 }
 
 
