@@ -2,9 +2,7 @@
 cd "$(dirname "$0")"
 
 # Get new pages
-wget --mirror --convert-links --adjust-extension --page-requisites --timestamping --exclude-directories images,stats --reject 'stats*' https://diamondhunt.co
-# Images contains many images that we need which aren't present in the homepage preload
-wget --mirror --convert-links --adjust-extension --page-requisites --timestamping --no-parent --reject 'index.html*' https://diamondhunt.co/images/
+wget --mirror --convert-links --adjust-extension --page-requisites --timestamping --content-disposition --exclude-directories stats --reject 'stats*' https://diamondhunt.co https://diamondhunt.co/images/
 
 # rename cachebuster files
 rename -f -v 's/(.*\.js).*/$1/' diamondhunt.co/js/*.js?*
