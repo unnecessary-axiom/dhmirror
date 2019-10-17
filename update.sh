@@ -2,7 +2,7 @@
 cd "$(dirname "$0")"
 
 # Get new pages
-wget --mirror --convert-links --adjust-extension --page-requisites --timestamping --content-disposition --exclude-directories stats --reject 'stats*' https://diamondhunt.co https://diamondhunt.co/images/
+wget --mirror --convert-links --adjust-extension --page-requisites --timestamping --content-disposition --exclude-directories stats --reject 'stats*,hiscores.ph*' https://diamondhunt.co https://diamondhunt.co/images/
 
 # rename cachebuster files
 rename -f -v 's/(.*\.js).*/$1/' diamondhunt.co/js/*.js?*
