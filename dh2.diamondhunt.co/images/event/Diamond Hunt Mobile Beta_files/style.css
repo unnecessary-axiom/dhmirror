@@ -2,7 +2,7 @@
 body
 {
 	font-family:"Lucida Grande","bitstream vera sans","trebuchet ms","sans-serif","verdana";
-	background-image:url('https://diamondhunt.co/images/event/images/backgrounds/background2.jpg');
+	background-image:url('https://dh2.diamondhunt.co/images/event/images/backgrounds/background2.jpg');
 	font-size:12pt;
 	
     -webkit-touch-callout: none;
@@ -338,7 +338,7 @@ div.basic-smallbox
 {
 	width:90%;
 	border:1px solid grey;
-	background-image:url("https://diamondhunt.co/images/event/images/backgrounds/background.jpg");
+	background-image:url("https://dh2.diamondhunt.co/images/event/images/backgrounds/background.jpg");
 }
 
 div.basic-smallbox-light
